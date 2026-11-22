@@ -1,0 +1,764 @@
+{
+  "pages": {
+    "home": {
+      "title": "APEC IIED",
+      "description": "APEC IIED aims to build and strengthen regional education partnerships, with a focus on digital human resources.",
+      "og_image": "https://static.wixstatic.com/media/7c0f6d_b1f361ec782a41b0aca64e8fa46ac5e6%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/7c0f6d_b1f361ec782a41b0aca64e8fa46ac5e6%7Emv2.jpg",
+      "url": "https://www.apeciied.org/"
+    },
+    "about": {
+      "title": "About | APEC IIED",
+      "description": "The APEC Institute of Innovation & Education Development (APEC IIED) is a project of Taipei Tech, under the direction of he Ministry of Education (MOE). It aims to accelerate Asia-Pacific regional education cooperation, strengthen partnerships with key international organizations, with a focus on human resource development in the digital age.",
+      "og_image": "https://static.wixstatic.com/media/7c0f6d_b1f361ec782a41b0aca64e8fa46ac5e6%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/7c0f6d_b1f361ec782a41b0aca64e8fa46ac5e6%7Emv2.jpg",
+      "url": "https://www.apeciied.org/about"
+    },
+    "organization": {
+      "title": "Organization | APEC IIED",
+      "description": "The APEC Institute of Innovation & Education Development (APEC IIED) is a project of Taipei Tech, under the direction of he Ministry of Education (MOE). ",
+      "og_image": "https://static.wixstatic.com/media/7c0f6d_b1f361ec782a41b0aca64e8fa46ac5e6%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/7c0f6d_b1f361ec782a41b0aca64e8fa46ac5e6%7Emv2.jpg",
+      "url": "https://www.apeciied.org/organization"
+    },
+    "apec-hrdwg-ednet": {
+      "title": "APEC HRDWG-EDNET | APEC IIED",
+      "description": "The goal of APEC Human Resource Development Working Group Education Network is to foster strong and vibrant learning systems across APEC member economies .",
+      "og_image": "https://static.wixstatic.com/media/7c0f6d_b1f361ec782a41b0aca64e8fa46ac5e6%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/7c0f6d_b1f361ec782a41b0aca64e8fa46ac5e6%7Emv2.jpg",
+      "url": "https://www.apeciied.org/apec-hrdwg-ednet"
+    },
+    "newsletters": {
+      "title": "Newsletters | APEC IIED",
+      "description": "Latest news of events of APEC and APEC IIED",
+      "og_image": "https://static.wixstatic.com/media/7c0f6d_b1f361ec782a41b0aca64e8fa46ac5e6%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/7c0f6d_b1f361ec782a41b0aca64e8fa46ac5e6%7Emv2.jpg",
+      "url": "https://www.apeciied.org/newsletters"
+    },
+    "project-schedule": {
+      "title": "Project Schedule | APEC IIED",
+      "description": "Project schedule of APEC IIED and its affiliated organizations",
+      "og_image": "https://static.wixstatic.com/media/7c0f6d_b1f361ec782a41b0aca64e8fa46ac5e6%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/7c0f6d_b1f361ec782a41b0aca64e8fa46ac5e6%7Emv2.jpg",
+      "url": "https://www.apeciied.org/project-schedule"
+    },
+    "apec-events": {
+      "title": "APEC Events | APEC IIED",
+      "description": "A list of events that APEC IIED has hosted",
+      "og_image": "https://static.wixstatic.com/media/7c0f6d_b1f361ec782a41b0aca64e8fa46ac5e6%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/7c0f6d_b1f361ec782a41b0aca64e8fa46ac5e6%7Emv2.jpg",
+      "url": "https://www.apeciied.org/apec-events"
+    },
+    "apec-event-highlights": {
+      "title": "APEC Event Highlights | APEC IIED",
+      "description": "Highlight of events that APEC IIED has hosted",
+      "og_image": "https://static.wixstatic.com/media/7c0f6d_b1f361ec782a41b0aca64e8fa46ac5e6%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/7c0f6d_b1f361ec782a41b0aca64e8fa46ac5e6%7Emv2.jpg",
+      "url": "https://www.apeciied.org/apec-event-highlights"
+    },
+    "contact": {
+      "title": "Contact | APEC IIED",
+      "description": "For more information, please contact us!",
+      "og_image": "https://static.wixstatic.com/media/7c0f6d_b1f361ec782a41b0aca64e8fa46ac5e6%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/7c0f6d_b1f361ec782a41b0aca64e8fa46ac5e6%7Emv2.jpg",
+      "url": "https://www.apeciied.org/contact"
+    }
+  },
+  "images": {
+    "7c0f6d_b1f361ec782a41b0aca64e8fa46ac5e6~mv2.jpg": {
+      "kind": "media",
+      "alt": "og:image",
+      "pages": [
+        "home",
+        "about",
+        "organization",
+        "apec-hrdwg-ednet",
+        "newsletters",
+        "project-schedule",
+        "apec-events",
+        "apec-event-highlights",
+        "contact"
+      ]
+    },
+    "7c0f6d_8edcc8e14e23467096ebe5ecc96d50f2~mv2.jpg": {
+      "kind": "media",
+      "alt": "favicon",
+      "pages": [
+        "home",
+        "about",
+        "organization",
+        "apec-hrdwg-ednet",
+        "newsletters",
+        "project-schedule",
+        "apec-events",
+        "apec-event-highlights",
+        "contact"
+      ]
+    },
+    "nsplsh_e6493a9e00374d2dab85b46a28286cb1~mv2.jpg": {
+      "kind": "media",
+      "alt": "",
+      "pages": [
+        "home"
+      ]
+    },
+    "nsplsh_6bcf82b644c44016b639b25ae4f2346f~mv2.jpg": {
+      "kind": "media",
+      "alt": "",
+      "pages": [
+        "home"
+      ]
+    },
+    "nsplsh_665f232d6b8644daa61159ebfcff47a8~mv2.jpg": {
+      "kind": "media",
+      "alt": "",
+      "pages": [
+        "home"
+      ]
+    },
+    "11062b_6e9638ad803e4099a6116eb750b5a584~mv2.png": {
+      "kind": "media",
+      "alt": "Instagram",
+      "pages": [
+        "home"
+      ]
+    },
+    "nsplsh_4a61336b3471527833784d~mv2_d_4256_2832_s_4_2.jpg": {
+      "kind": "media",
+      "alt": "",
+      "pages": [
+        "about"
+      ]
+    },
+    "7c0f6d_d532dc478fe44206a6817debab74cb79~mv2.png": {
+      "kind": "media",
+      "alt": "Arrow.png",
+      "pages": [
+        "organization"
+      ]
+    },
+    "nsplsh_312d614132466164796463~mv2_d_5101_3401_s_4_2.jpg": {
+      "kind": "media",
+      "alt": "",
+      "pages": [
+        "organization"
+      ]
+    },
+    "11062b_208560c502c6415b966e65c5091ace3d~mv2.jpeg": {
+      "kind": "media",
+      "alt": "",
+      "pages": [
+        "organization"
+      ]
+    },
+    "nsplsh_d71c11da17294e2e9d55d31bebfdde74~mv2.jpg": {
+      "kind": "media",
+      "alt": "",
+      "pages": [
+        "organization"
+      ]
+    },
+    "7c0f6d_f3a8afad3d9d43e59593ae88e682ce50~mv2.jpg": {
+      "kind": "media",
+      "alt": "mczh-tw700x700_large18537_957981669621.jpg",
+      "pages": [
+        "organization"
+      ]
+    },
+    "7c0f6d_fbba5b691e2d471797932206f046c208~mv2.jpg": {
+      "kind": "media",
+      "alt": "mczh-tw700x700_large18942_498958897272.jpg",
+      "pages": [
+        "organization"
+      ]
+    },
+    "7c0f6d_9b4b3be06b0444859dbd3e4a867a0cbd~mv2.jpg": {
+      "kind": "media",
+      "alt": "mczh-tw700x700_large18527_955276767808.jpg",
+      "pages": [
+        "organization"
+      ]
+    },
+    "7c0f6d_d55ffc0f69c842babc8e3837f6af0624~mv2.jpg": {
+      "kind": "media",
+      "alt": "portrait-alan_yen.jpg",
+      "pages": [
+        "organization"
+      ]
+    },
+    "7c0f6d_b847ebe7653f4e0ca28c8dc2076ee8bf~mv2.jpg": {
+      "kind": "media",
+      "alt": "portrait-tiesias_liu.jpg",
+      "pages": [
+        "organization"
+      ]
+    },
+    "7c0f6d_406fc50dea9b4181b0e30873ce95aa10~mv2.jpg": {
+      "kind": "media",
+      "alt": "portrait-peihsin_lin.jpg",
+      "pages": [
+        "organization"
+      ]
+    },
+    "7c0f6d_2ae24b464aa045b8992c6f84995410c0~mv2.jpg": {
+      "kind": "media",
+      "alt": "portrait-vally_liu.jpg",
+      "pages": [
+        "organization"
+      ]
+    },
+    "7c0f6d_7d7ca62cea5c4fa6b8472734616c223f~mv2.png": {
+      "kind": "media",
+      "alt": "",
+      "pages": [
+        "apec-hrdwg-ednet"
+      ]
+    },
+    "nsplsh_6c334d4d76525964506863~mv2_d_5943_3334_s_4_2.jpg": {
+      "kind": "media",
+      "alt": "Image by Cytonn Photography",
+      "pages": [
+        "apec-hrdwg-ednet"
+      ]
+    },
+    "nsplsh_c625564f717047588542e3da6e7aafcd~mv2.jpg": {
+      "kind": "media",
+      "alt": "Image by Alfons Morales",
+      "pages": [
+        "apec-hrdwg-ednet"
+      ]
+    },
+    "a3c153_0eda39ad56dd4a469fd72694be3de97e~mv2.jpg": {
+      "kind": "media",
+      "alt": "Image by Cytonn Photography",
+      "pages": [
+        "apec-hrdwg-ednet"
+      ]
+    },
+    "7c0f6d_0299aac911a642f99ba40defefd50861~mv2.png": {
+      "kind": "media",
+      "alt": "HRDWG in Chinese Taipei Chart.png",
+      "pages": [
+        "apec-hrdwg-ednet"
+      ]
+    },
+    "7c0f6d_bc4de06b357e4b718acb8796fe067324~mv2.png": {
+      "kind": "media",
+      "alt": "EDNET Goals and Objectives.png",
+      "pages": [
+        "apec-hrdwg-ednet"
+      ]
+    },
+    "7c0f6d_355c3501ae714a198b3a6c2d293660d1~mv2.jpeg": {
+      "kind": "media",
+      "alt": "IIED Newsletter Issue 14 1.jpeg",
+      "pages": [
+        "newsletters"
+      ]
+    },
+    "7c0f6d_00c172b6478a47259aaa0c2644ba56dd~mv2.jpeg": {
+      "kind": "media",
+      "alt": "IIED Newsletter Issue 11.jpeg",
+      "pages": [
+        "newsletters"
+      ]
+    },
+    "7c0f6d_f0c419f1df1e42709bb4e9ce7762cc98~mv2.jpeg": {
+      "kind": "media",
+      "alt": "APEC IIED News Issue 8 1.jpeg",
+      "pages": [
+        "newsletters"
+      ]
+    },
+    "7c0f6d_5d927cf75e9247198255c875548bcc55~mv2.jpeg": {
+      "kind": "media",
+      "alt": "IIED Newsletter Issue 05.jpeg",
+      "pages": [
+        "newsletters"
+      ]
+    },
+    "7c0f6d_b7becc07f5c4453d93239c6519151126~mv2.png": {
+      "kind": "media",
+      "alt": "IIED Newsletter Issue 02 1.png",
+      "pages": [
+        "newsletters"
+      ]
+    },
+    "7c0f6d_c1f80fc4d0e842bb959bc5a689827c45~mv2.jpeg": {
+      "kind": "media",
+      "alt": "IIED Newsletter Issue 13 1.jpeg",
+      "pages": [
+        "newsletters"
+      ]
+    },
+    "7c0f6d_3211319518894c45a7ba0a1aa04db8a4~mv2.jpeg": {
+      "kind": "media",
+      "alt": "IIED Newsletter Issue 10 1.jpeg",
+      "pages": [
+        "newsletters"
+      ]
+    },
+    "7c0f6d_95b886a4a3ba41669ffcef525ad66773~mv2.jpeg": {
+      "kind": "media",
+      "alt": "APEC IIED News Issue 7 1.jpeg",
+      "pages": [
+        "newsletters"
+      ]
+    },
+    "7c0f6d_d2211d5a50d64f898a7854549b8aa8a3~mv2.jpeg": {
+      "kind": "media",
+      "alt": "IIED Newsletter Issue 04.jpeg",
+      "pages": [
+        "newsletters"
+      ]
+    },
+    "7c0f6d_e29b5b1d2a754d8b8824f793b141e817~mv2.png": {
+      "kind": "media",
+      "alt": "IIED Newsletter Issue 01-1 1000x1414.png",
+      "pages": [
+        "newsletters"
+      ]
+    },
+    "7c0f6d_90612cc2aa2e420a8f9af0170eb2946d~mv2.jpeg": {
+      "kind": "media",
+      "alt": "IIED News letter Issue 12 1.jpeg",
+      "pages": [
+        "newsletters"
+      ]
+    },
+    "7c0f6d_3a98ab42d420455d9e2cfa6f1fd55c94~mv2.jpeg": {
+      "kind": "media",
+      "alt": "IIED Newsletter ISSUE 9 1.jpeg",
+      "pages": [
+        "newsletters"
+      ]
+    },
+    "7c0f6d_27f87a8196574160a6967f8739c8f8e7~mv2.jpeg": {
+      "kind": "media",
+      "alt": "IIED Newsletter Issue 06 1.jpeg",
+      "pages": [
+        "newsletters"
+      ]
+    },
+    "7c0f6d_1a8018d1143a4ee89a2af812d7943b44~mv2.png": {
+      "kind": "media",
+      "alt": "IIED newsletter issue 3 (1212).png",
+      "pages": [
+        "newsletters"
+      ]
+    },
+    "nsplsh_bdbfa6deb1cb4c76b1ec9ac751a82e2d~mv2.jpg": {
+      "kind": "media",
+      "alt": "",
+      "pages": [
+        "project-schedule",
+        "apec-events",
+        "apec-event-highlights"
+      ]
+    },
+    "7c0f6d_7327479ce43d4105bdd1c2ae9ed03379~mv2.jpg": {
+      "kind": "media",
+      "alt": "",
+      "pages": [
+        "apec-events"
+      ]
+    },
+    "7c0f6d_77f01adfbe97409b9edb6441eda8f96e~mv2.jpg": {
+      "kind": "media",
+      "alt": "2025 APEC Youth Engagement Workshop.jpg",
+      "pages": [
+        "apec-events"
+      ]
+    },
+    "7c0f6d_04ebceda21514a61b054d3a00dc1619f~mv2.jpg": {
+      "kind": "media",
+      "alt": "2024 APEC Forum.jpg",
+      "pages": [
+        "apec-events"
+      ]
+    },
+    "7c0f6d_e711379f6929484d92c7115534e4d59c~mv2.png": {
+      "kind": "media",
+      "alt": "2024 TVET.png",
+      "pages": [
+        "apec-events"
+      ]
+    },
+    "7c0f6d_5baef7e1ca0e41df953fc41246c1084b~mv2.jpg": {
+      "kind": "media",
+      "alt": "2024 Model APEC.jpg",
+      "pages": [
+        "apec-events"
+      ]
+    },
+    "7c0f6d_f9686180579549858e3f6fd2d345449d~mv2.png": {
+      "kind": "media",
+      "alt": "2023 APEC Youth Impact Forum.png",
+      "pages": [
+        "apec-events"
+      ]
+    },
+    "7c0f6d_43f16f6600b3450ea52661337eb70d54~mv2.png": {
+      "kind": "media",
+      "alt": "2023 TVET.png",
+      "pages": [
+        "apec-events"
+      ]
+    },
+    "7c0f6d_d9ca4728134347658d32a6815601007d~mv2.jpg": {
+      "kind": "media",
+      "alt": "2023 Model APEC.jpg",
+      "pages": [
+        "apec-events"
+      ]
+    },
+    "7c0f6d_7e867d68fe4a48beb1342ec806b6064e~mv2.png": {
+      "kind": "media",
+      "alt": "2022 APEC YIE.png",
+      "pages": [
+        "apec-events"
+      ]
+    },
+    "7c0f6d_171fe2ffdc034da590eae895e92905ee~mv2.png": {
+      "kind": "media",
+      "alt": "2022 APEC Forum.png",
+      "pages": [
+        "apec-events"
+      ]
+    },
+    "7c0f6d_b1b674c03d7a447db662d10505e7300e~mv2.png": {
+      "kind": "media",
+      "alt": "2022 TVET.png",
+      "pages": [
+        "apec-events"
+      ]
+    },
+    "7c0f6d_ad9389ec9dd443e892adbaf22b43d7ba~mv2.jpg": {
+      "kind": "media",
+      "alt": "2022 APEC YIE Onlin Forum.jpg",
+      "pages": [
+        "apec-events"
+      ]
+    },
+    "7c0f6d_ff5ba7e7f5a7453cacff8e8f300ccd3c~mv2.png": {
+      "kind": "media",
+      "alt": "2021 APEC YIE.png",
+      "pages": [
+        "apec-events"
+      ]
+    },
+    "7c0f6d_a97c09bdd9044d248555f646d38a43a2~mv2.png": {
+      "kind": "media",
+      "alt": "2021 TVET.png",
+      "pages": [
+        "apec-events"
+      ]
+    },
+    "7c0f6d_1974daf2a7e1478692e8597ff351aa52~mv2.png": {
+      "kind": "media",
+      "alt": "2019 APEC YIE.png",
+      "pages": [
+        "apec-events"
+      ]
+    },
+    "7c0f6d_f74ae2eeb6174e4797f9af2964abbbe4~mv2.png": {
+      "kind": "media",
+      "alt": "2019 Model APEC.png",
+      "pages": [
+        "apec-events"
+      ]
+    },
+    "7c0f6d_8f06f3cfb8cc4f479b2f17157634de2f~mv2.png": {
+      "kind": "media",
+      "alt": "2018 YIE.png",
+      "pages": [
+        "apec-events"
+      ]
+    },
+    "7c0f6d_f51b87a6bc484446acd67f196e37879e~mv2.png": {
+      "kind": "media",
+      "alt": "2018 APEC.png",
+      "pages": [
+        "apec-events"
+      ]
+    },
+    "7c0f6d_b3f6e0853ca04a82b6800ce0e0eb0aad~mv2.png": {
+      "kind": "media",
+      "alt": "2017 APEC.png",
+      "pages": [
+        "apec-events"
+      ]
+    },
+    "7c0f6d_2b6ccfe978e046a394ba69021de55c9a~mv2.png": {
+      "kind": "media",
+      "alt": "2015 APEC.png",
+      "pages": [
+        "apec-events"
+      ]
+    },
+    "7c0f6d_766c1dc4a843450dac67ffa2608857ec~mv2.png": {
+      "kind": "media",
+      "alt": "2014 APEC.png",
+      "pages": [
+        "apec-events"
+      ]
+    },
+    "7c0f6d_d6a63c4e8e124a528c52bad5cc94c4bd~mv2.jpg": {
+      "kind": "media",
+      "alt": "",
+      "pages": [
+        "apec-event-highlights"
+      ]
+    },
+    "95a8d23fd351498dacce637ff0136bb8.jpg": {
+      "kind": "media",
+      "alt": "",
+      "pages": [
+        "contact"
+      ]
+    },
+    "e1aa082f7c0747168d9cf43e77046142.png": {
+      "kind": "media",
+      "alt": "Instagram",
+      "pages": [
+        "contact"
+      ]
+    }
+  },
+  "files": {
+    "7c0f6d_1b76e61160aa4b3cb43308c8c593a7c9.pdf": {
+      "url": "https://www.apeciied.org/_files/ugd/7c0f6d_1b76e61160aa4b3cb43308c8c593a7c9.pdf",
+      "pages": [
+        "newsletters"
+      ]
+    },
+    "7c0f6d_ef580918c0c4443ebddced4ae8a6c4cf.pdf": {
+      "url": "https://www.apeciied.org/_files/ugd/7c0f6d_ef580918c0c4443ebddced4ae8a6c4cf.pdf",
+      "pages": [
+        "newsletters"
+      ]
+    },
+    "7c0f6d_40a5cda7784b4ca1b9c9f931693fb0ae.pdf": {
+      "url": "https://www.apeciied.org/_files/ugd/7c0f6d_40a5cda7784b4ca1b9c9f931693fb0ae.pdf",
+      "pages": [
+        "newsletters"
+      ]
+    },
+    "7c0f6d_c030e239b2b14b698d8167bbdf70f435.pdf": {
+      "url": "https://www.apeciied.org/_files/ugd/7c0f6d_c030e239b2b14b698d8167bbdf70f435.pdf",
+      "pages": [
+        "newsletters"
+      ]
+    },
+    "7c0f6d_a94e454798104fe0951737050f6a2eb6.pdf": {
+      "url": "https://www.apeciied.org/_files/ugd/7c0f6d_a94e454798104fe0951737050f6a2eb6.pdf",
+      "pages": [
+        "newsletters"
+      ]
+    },
+    "7c0f6d_44d265bc97c849e992bf8acfdd583687.pdf": {
+      "url": "https://www.apeciied.org/_files/ugd/7c0f6d_44d265bc97c849e992bf8acfdd583687.pdf",
+      "pages": [
+        "newsletters"
+      ]
+    },
+    "7c0f6d_d645641fb1ec42df9dd334168daa9424.pdf": {
+      "url": "https://www.apeciied.org/_files/ugd/7c0f6d_d645641fb1ec42df9dd334168daa9424.pdf",
+      "pages": [
+        "newsletters"
+      ]
+    },
+    "7c0f6d_774fa3dc7b98416aad0bc1d0166152b7.pdf": {
+      "url": "https://www.apeciied.org/_files/ugd/7c0f6d_774fa3dc7b98416aad0bc1d0166152b7.pdf",
+      "pages": [
+        "newsletters"
+      ]
+    },
+    "7c0f6d_639d38659c834fbdac89dc0f8ad673a8.pdf": {
+      "url": "https://www.apeciied.org/_files/ugd/7c0f6d_639d38659c834fbdac89dc0f8ad673a8.pdf",
+      "pages": [
+        "newsletters"
+      ]
+    },
+    "7c0f6d_edaa8fd135de47fd97c266216594dfbc.pdf": {
+      "url": "https://www.apeciied.org/_files/ugd/7c0f6d_edaa8fd135de47fd97c266216594dfbc.pdf",
+      "pages": [
+        "newsletters"
+      ]
+    },
+    "7c0f6d_f594b520e63847fbba96944b79090a91.pdf": {
+      "url": "https://www.apeciied.org/_files/ugd/7c0f6d_f594b520e63847fbba96944b79090a91.pdf",
+      "pages": [
+        "newsletters"
+      ]
+    },
+    "7c0f6d_a2414eb625234bd0b877b1a862377a0b.pdf": {
+      "url": "https://www.apeciied.org/_files/ugd/7c0f6d_a2414eb625234bd0b877b1a862377a0b.pdf",
+      "pages": [
+        "newsletters"
+      ]
+    },
+    "7c0f6d_17a6cd9652b2416ea9677992ffd24ca4.pdf": {
+      "url": "https://www.apeciied.org/_files/ugd/7c0f6d_17a6cd9652b2416ea9677992ffd24ca4.pdf",
+      "pages": [
+        "newsletters"
+      ]
+    },
+    "7c0f6d_b2e33068d19b46d891e9f6192a450174.pdf": {
+      "url": "https://www.apeciied.org/_files/ugd/7c0f6d_b2e33068d19b46d891e9f6192a450174.pdf",
+      "pages": [
+        "newsletters"
+      ]
+    }
+  },
+  "links": {
+    "https://taipeiyie.com/en-2021-forum/": [
+      "apec-events"
+    ],
+    "https://taipeiyie.com/en-2022-forum/": [
+      "apec-events"
+    ],
+    "https://taipeiyie.com/en-2022-online-forum/": [
+      "apec-events"
+    ],
+    "https://taipeiyie.com/en-home/": [
+      "organization",
+      "project-schedule"
+    ],
+    "https://www.apeciied.org": [
+      "_header"
+    ],
+    "https://www.apeciied.org/_files/ugd/7c0f6d_17a6cd9652b2416ea9677992ffd24ca4.pdf": [
+      "newsletters"
+    ],
+    "https://www.apeciied.org/_files/ugd/7c0f6d_1b76e61160aa4b3cb43308c8c593a7c9.pdf": [
+      "newsletters"
+    ],
+    "https://www.apeciied.org/_files/ugd/7c0f6d_40a5cda7784b4ca1b9c9f931693fb0ae.pdf": [
+      "newsletters"
+    ],
+    "https://www.apeciied.org/_files/ugd/7c0f6d_44d265bc97c849e992bf8acfdd583687.pdf": [
+      "newsletters"
+    ],
+    "https://www.apeciied.org/_files/ugd/7c0f6d_639d38659c834fbdac89dc0f8ad673a8.pdf": [
+      "newsletters"
+    ],
+    "https://www.apeciied.org/_files/ugd/7c0f6d_774fa3dc7b98416aad0bc1d0166152b7.pdf": [
+      "newsletters"
+    ],
+    "https://www.apeciied.org/_files/ugd/7c0f6d_a2414eb625234bd0b877b1a862377a0b.pdf": [
+      "newsletters"
+    ],
+    "https://www.apeciied.org/_files/ugd/7c0f6d_a94e454798104fe0951737050f6a2eb6.pdf": [
+      "newsletters"
+    ],
+    "https://www.apeciied.org/_files/ugd/7c0f6d_b2e33068d19b46d891e9f6192a450174.pdf": [
+      "newsletters"
+    ],
+    "https://www.apeciied.org/_files/ugd/7c0f6d_c030e239b2b14b698d8167bbdf70f435.pdf": [
+      "newsletters"
+    ],
+    "https://www.apeciied.org/_files/ugd/7c0f6d_d645641fb1ec42df9dd334168daa9424.pdf": [
+      "newsletters"
+    ],
+    "https://www.apeciied.org/_files/ugd/7c0f6d_edaa8fd135de47fd97c266216594dfbc.pdf": [
+      "newsletters"
+    ],
+    "https://www.apeciied.org/_files/ugd/7c0f6d_ef580918c0c4443ebddced4ae8a6c4cf.pdf": [
+      "newsletters"
+    ],
+    "https://www.apeciied.org/_files/ugd/7c0f6d_f594b520e63847fbba96944b79090a91.pdf": [
+      "newsletters"
+    ],
+    "https://www.apeciied.org/about": [
+      "_header",
+      "home"
+    ],
+    "https://www.apeciied.org/apec-event-highlights": [
+      "_header"
+    ],
+    "https://www.apeciied.org/apec-events": [
+      "_header"
+    ],
+    "https://www.apeciied.org/apec-hrdwg-ednet": [
+      "_header",
+      "home"
+    ],
+    "https://www.apeciied.org/contact": [
+      "_header",
+      "home"
+    ],
+    "https://www.apeciied.org/newsletters": [
+      "_header",
+      "home"
+    ],
+    "https://www.apeciied.org/organization": [
+      "_header",
+      "about",
+      "home"
+    ],
+    "https://www.apeciied.org/project-schedule": [
+      "_header"
+    ],
+    "https://www.instagram.com/apec_iied/": [
+      "contact",
+      "home"
+    ],
+    "https://www.taipei-tvet.com/": [
+      "organization"
+    ],
+    "https://www.taipei-tvet.com/2022-hrdwg-ednet-project/": [
+      "apec-events"
+    ],
+    "https://www.taipei-tvet.com/agenda/": [
+      "apec-events"
+    ],
+    "https://www.yietaipei.com/": [
+      "apec-events"
+    ],
+    "https://www.yietaipei.com/2018/": [
+      "apec-events"
+    ],
+    "mailto:apec_iied@ntut.edu.tw?subject=About APEC IIED": [
+      "contact"
+    ]
+  },
+  "youtube": [
+    {
+      "id": "swCFyod4kpo",
+      "title": "2024 APEC Forum on Women and Youth Empowerment Recap Video",
+      "page": "apec-event-highlights"
+    },
+    {
+      "id": "aAb5l96D40g",
+      "title": "2024 APEC TVET Workshop Taipei",
+      "page": "apec-event-highlights"
+    },
+    {
+      "id": "mF8MYLPqlGI",
+      "title": "2024 APEC Youth Capacity-Building Training & Model APEC",
+      "page": "apec-event-highlights"
+    },
+    {
+      "id": "pcip6ewBA2c",
+      "title": "2023 APEC Youth Impact Forum Recap Video",
+      "page": "apec-event-highlights"
+    },
+    {
+      "id": "6g38ra761LA",
+      "title": "【Opening Remarks】2023 TVET APEC  Workshop",
+      "page": "apec-event-highlights"
+    },
+    {
+      "id": "Qxyy9v9Ftt4",
+      "title": "2023 APEC Youth Capacity-Building Training & Model APEC",
+      "page": "apec-event-highlights"
+    },
+    {
+      "id": "cF8fnA-XhKY",
+      "title": "2022 APEC YIE Forum Recap Video Day 1 & 2",
+      "page": "apec-event-highlights"
+    },
+    {
+      "id": "Bths6_K3OxQ",
+      "title": "2022 APEC SOM2 HRDWG EDNET Meeting in Bangkok, Thailand",
+      "page": "apec-event-highlights"
+    },
+    {
+      "id": "4zUrCBdoAyA",
+      "title": "2022 APEC 青年培訓課程花絮",
+      "page": "apec-event-highlights"
+    }
+  ]
+}
