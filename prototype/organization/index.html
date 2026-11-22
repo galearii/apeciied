@@ -1,0 +1,304 @@
+<!doctype html>
+<!--
+  PROTOTYPE, throw away. Wayfinder ticket: "How should Organization present
+  its staff and structure?" (galearii/apeciied issue 4).
+  Three structurally different Organization pages, switchable via ?variant=A|B|C
+  (or the bar at the bottom, or the left/right arrow keys). All text is the
+  Wix page's text, unchanged. Tailwind comes from the CDN only for this
+  prototype. Open the file in a browser.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PROTOTYPE · Organization | APEC IIED</title>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.11"></script>
+<style type="text/tailwindcss">
+  @theme {
+    --color-copper: #B46A2C;
+    --color-copper-dark: #78471D;
+    --color-copper-mid: #DA9B66;
+    --color-copper-light: #ECCDB2;
+    --color-peach: #FAE8DB;
+    --color-ink: #1E1E1E;
+    --color-mute: #696666;
+    --color-paper: #F5F5F5;
+  }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans TC", sans-serif; }
+  .logo svg { width: 100%; height: 100%; }
+</style>
+</head>
+<body class="bg-white text-ink antialiased">
+
+<!-- Shared chrome, approximating the live site so variants are judged in context -->
+<header class="border-b border-black/5 bg-paper">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+    <a href="#" class="flex items-center gap-3">
+      <span class="logo block h-10 w-14" data-svg="iied"></span>
+      <span class="text-xs font-semibold leading-tight">Institute of Innovation &amp;<br>Education Development</span>
+    </a>
+    <nav class="hidden gap-5 text-sm text-mute md:flex">
+      <a>Home</a><a class="text-copper">About</a><a>Organization</a><a>APEC HRDWG EDNET</a><a>Newsletters</a><a>APEC Project ▾</a><a>Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="variant-root"></main>
+
+<footer class="mt-16 bg-ink py-8 text-center text-xs text-white/70">
+  Follow us on Instagram · 2026 © APEC Institute of Innovation &amp; Education Development
+</footer>
+
+<!-- ============ Variant A: one flowing story, no tabs ============ -->
+<template id="A" data-name="Flow + one people grid">
+  <section class="bg-paper py-12 text-center">
+    <h1 class="text-4xl font-semibold">Organization</h1>
+  </section>
+
+  <!-- The chain as a horizontal flow instead of four stacked boxes -->
+  <section class="mx-auto max-w-6xl px-4 py-12">
+    <ol class="grid grid-cols-2 gap-4 md:grid-cols-4">
+      <li class="relative rounded-lg bg-peach/60 p-4 text-center">
+        <span class="logo mx-auto block h-16 w-24" data-svg="apec"></span>
+        <p class="mt-2 text-sm text-mute">Asia-Pacific Economic Cooperation</p>
+        <span class="absolute -right-3 top-1/2 hidden -translate-y-1/2 text-copper md:block">→</span>
+      </li>
+      <li class="relative rounded-lg bg-peach/60 p-4 text-center">
+        <span class="logo mx-auto block h-16 w-16" data-svg="moe"></span>
+        <p class="mt-2 text-sm text-mute">Ministry of Education</p>
+        <span class="absolute -right-3 top-1/2 hidden -translate-y-1/2 text-copper md:block">→</span>
+      </li>
+      <li class="relative rounded-lg bg-copper p-4 text-center text-white ring-4 ring-copper-light">
+        <span class="logo mx-auto block h-16 w-20 rounded bg-white p-1" data-svg="iied"></span>
+        <p class="mt-2 text-sm">Institute of Innovation &amp;<br>Education Development</p>
+        <span class="absolute -right-3 top-1/2 hidden -translate-y-1/2 text-copper md:block">→</span>
+      </li>
+      <li class="rounded-lg bg-peach/60 p-4 text-center">
+        <span class="logo mx-auto block h-16 w-24" data-svg="taipeitech"></span>
+        <p class="mt-2 text-sm text-mute">Taipei Tech</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- Departments: photo on top, text below (no text boxes floating on photos), project links folded in -->
+  <section class="mx-auto grid max-w-6xl gap-6 px-4 md:grid-cols-3">
+    <article class="overflow-hidden rounded-lg border border-black/10">
+      <img src="img/higher.jpg" alt="" class="h-44 w-full object-cover">
+      <div class="p-5">
+        <h3 class="font-semibold text-copper-dark">Dept. of Higher Education</h3>
+        <p class="mt-2 text-sm"><a class="underline decoration-copper underline-offset-4" href="https://taipeiyie.com/en-home/">Asia-Pacific Youth Innovation &amp; Entrepreneurship Project</a></p>
+      </div>
+    </article>
+    <article class="overflow-hidden rounded-lg border border-black/10">
+      <img src="img/tvet.jpg" alt="" class="h-44 w-full object-cover">
+      <div class="p-5">
+        <h3 class="font-semibold text-copper-dark">Dept. of Technological and Vocational Education</h3>
+        <p class="mt-2 text-sm"><a class="underline decoration-copper underline-offset-4" href="https://www.taipei-tvet.com/">Working Group to Internationalize Technological / Vocational Education in Taiwan</a></p>
+      </div>
+    </article>
+    <article class="overflow-hidden rounded-lg border border-black/10">
+      <img src="img/intl.jpg" alt="" class="h-44 w-full object-cover">
+      <div class="p-5">
+        <h3 class="font-semibold text-copper-dark">Dept. of International and Cross-strait Education</h3>
+        <p class="mt-2 text-sm">HRDWG-EDNET</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- Everyone visible at once: no tabs -->
+  <section class="mx-auto mt-16 max-w-6xl px-4">
+    <h2 class="text-2xl font-semibold">Leadership</h2>
+    <div class="mt-6 grid grid-cols-2 gap-6 md:grid-cols-3">
+      <figure><img src="img/yang.jpg" alt="Yun-Hua Yang" class="aspect-square w-full rounded-lg object-cover"><figcaption class="mt-3"><b class="block">Yun-Hua Yang</b><span class="text-sm text-mute">Director</span></figcaption></figure>
+      <figure><img src="img/lin.jpg" alt="Eric Yen-Liang Lin" class="aspect-square w-full rounded-lg object-cover"><figcaption class="mt-3"><b class="block">Eric Yen-Liang Lin</b><span class="text-sm text-mute">Deputy Director</span></figcaption></figure>
+      <figure><img src="img/tanangkingsing.jpg" alt="Michael Tanangkingsing" class="aspect-square w-full rounded-lg object-cover"><figcaption class="mt-3"><b class="block">Michael Tanangkingsing</b><span class="text-sm text-mute">Deputy Director</span></figcaption></figure>
+    </div>
+    <h2 class="mt-12 text-2xl font-semibold">Team</h2>
+    <div class="mt-6 grid grid-cols-2 gap-6 md:grid-cols-4">
+      <figure><img src="img/tliu.jpg" alt="Tiresias Liu" class="aspect-square w-full rounded-lg object-cover"><figcaption class="mt-3"><b class="block">Tiresias Liu</b><span class="text-sm text-mute">Project Manager</span></figcaption></figure>
+      <figure><img src="img/yen.jpg" alt="Alan Yen" class="aspect-square w-full rounded-lg object-cover"><figcaption class="mt-3"><b class="block">Alan Yen</b><span class="text-sm text-mute">Executive Secretary</span></figcaption></figure>
+      <figure><img src="img/plin.jpg" alt="Pei-Hsin Lin" class="aspect-square w-full rounded-lg object-cover"><figcaption class="mt-3"><b class="block">Pei-Hsin Lin</b><span class="text-sm text-mute">Project Manager</span></figcaption></figure>
+      <figure><img src="img/vliu.jpg" alt="Vally Liu" class="aspect-square w-full rounded-lg object-cover"><figcaption class="mt-3"><b class="block">Vally Liu</b><span class="text-sm text-mute">Project Manager</span></figcaption></figure>
+    </div>
+  </section>
+
+  <section class="mx-auto mt-16 max-w-6xl px-4">
+    <h2 class="text-2xl font-semibold">Related Projects</h2>
+    <ul class="mt-4 list-disc space-y-1 pl-5">
+      <li><a class="underline" href="https://www.taipei-tvet.com/">Working Group to Internationalize Technological / Vocational Education in Taiwan (Taipei TVET)</a></li>
+      <li><a class="underline" href="https://taipeiyie.com/en-home/">Asia-Pacific Youth Innovation &amp; Entrepreneurship Project (Taipei YIE)</a></li>
+      <li>EDNET Senior Staff Project</li>
+    </ul>
+  </section>
+</template>
+
+<!-- ============ Variant B: a real org chart (tree), people as a compact roster ============ -->
+<template id="B" data-name="Org-chart tree + roster">
+  <section class="bg-paper py-12 text-center">
+    <h1 class="text-4xl font-semibold">Organization</h1>
+  </section>
+
+  <section class="mx-auto max-w-5xl px-4 py-12">
+    <!-- trunk -->
+    <div class="flex flex-col items-center">
+      <div class="flex w-64 items-center gap-3 rounded-md border border-copper-light bg-white p-3"><span class="logo h-10 w-14 shrink-0" data-svg="apec"></span><span class="text-sm">Asia-Pacific Economic Cooperation</span></div>
+      <div class="h-6 w-px bg-copper"></div>
+      <div class="flex w-64 items-center gap-3 rounded-md border border-copper-light bg-white p-3"><span class="logo h-10 w-10 shrink-0" data-svg="moe"></span><span class="text-sm">Ministry of Education</span></div>
+      <div class="h-6 w-px bg-copper"></div>
+      <!-- IIED and its host side by side -->
+      <div class="flex items-center gap-3">
+        <div class="flex w-64 items-center gap-3 rounded-md bg-copper p-3 text-white"><span class="logo h-10 w-14 shrink-0 rounded bg-white p-0.5" data-svg="iied"></span><span class="text-sm">Institute of Innovation &amp; Education Development</span></div>
+        <span class="text-xs text-mute">at</span>
+        <div class="flex w-40 items-center gap-2 rounded-md border border-black/10 bg-white p-3"><span class="logo h-8 w-12 shrink-0" data-svg="taipeitech"></span><span class="text-sm">Taipei Tech</span></div>
+      </div>
+      <div class="h-6 w-px bg-copper"></div>
+    </div>
+    <!-- branches -->
+    <div class="relative grid gap-6 md:grid-cols-3">
+      <div class="absolute left-[16.6%] right-[16.6%] top-0 hidden h-px bg-copper md:block"></div>
+      <div class="flex flex-col items-center pt-6 text-center md:relative">
+        <div class="absolute top-0 hidden h-6 w-px bg-copper md:block"></div>
+        <div class="w-full rounded-md bg-peach p-4"><b class="text-sm text-copper-dark">Dept. of Higher Education</b></div>
+        <div class="h-4 w-px bg-copper-mid"></div>
+        <div class="w-full rounded-md border border-dashed border-copper-mid p-4 text-sm">Asia-Pacific Youth Innovation &amp; Entrepreneurship Project</div>
+      </div>
+      <div class="flex flex-col items-center pt-6 text-center md:relative">
+        <div class="absolute top-0 hidden h-6 w-px bg-copper md:block"></div>
+        <div class="w-full rounded-md bg-peach p-4"><b class="text-sm text-copper-dark">Dept. of Technological and Vocational Education</b></div>
+        <div class="h-4 w-px bg-copper-mid"></div>
+        <div class="w-full rounded-md border border-dashed border-copper-mid p-4 text-sm">Working Group to Internationalize Technological / Vocational Education in Taiwan</div>
+      </div>
+      <div class="flex flex-col items-center pt-6 text-center md:relative">
+        <div class="absolute top-0 hidden h-6 w-px bg-copper md:block"></div>
+        <div class="w-full rounded-md bg-peach p-4"><b class="text-sm text-copper-dark">Dept. of International and Cross-strait Education</b></div>
+        <div class="h-4 w-px bg-copper-mid"></div>
+        <div class="w-full rounded-md border border-dashed border-copper-mid p-4 text-sm">HRDWG-EDNET</div>
+      </div>
+    </div>
+    <p class="mt-4 text-center text-xs text-mute">(No photos in this variant: the three stock photos are dropped.)</p>
+  </section>
+
+  <!-- People as a roster: small round portraits, two columns -->
+  <section class="bg-paper py-12">
+    <div class="mx-auto grid max-w-5xl gap-10 px-4 md:grid-cols-2">
+      <div>
+        <h2 class="border-b-2 border-copper pb-2 text-xl font-semibold">Leadership</h2>
+        <ul class="mt-4 divide-y divide-black/10">
+          <li class="flex items-center gap-4 py-3"><img src="img/yang.jpg" alt="" class="h-14 w-14 rounded-full object-cover"><div><b>Yun-Hua Yang</b><div class="text-sm text-mute">Director</div></div></li>
+          <li class="flex items-center gap-4 py-3"><img src="img/lin.jpg" alt="" class="h-14 w-14 rounded-full object-cover"><div><b>Eric Yen-Liang Lin</b><div class="text-sm text-mute">Deputy Director</div></div></li>
+          <li class="flex items-center gap-4 py-3"><img src="img/tanangkingsing.jpg" alt="" class="h-14 w-14 rounded-full object-cover"><div><b>Michael Tanangkingsing</b><div class="text-sm text-mute">Deputy Director</div></div></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="border-b-2 border-copper pb-2 text-xl font-semibold">Team</h2>
+        <ul class="mt-4 divide-y divide-black/10">
+          <li class="flex items-center gap-4 py-3"><img src="img/tliu.jpg" alt="" class="h-14 w-14 rounded-full object-cover"><div><b>Tiresias Liu</b><div class="text-sm text-mute">Project Manager</div></div></li>
+          <li class="flex items-center gap-4 py-3"><img src="img/yen.jpg" alt="" class="h-14 w-14 rounded-full object-cover"><div><b>Alan Yen</b><div class="text-sm text-mute">Executive Secretary</div></div></li>
+          <li class="flex items-center gap-4 py-3"><img src="img/plin.jpg" alt="" class="h-14 w-14 rounded-full object-cover"><div><b>Pei-Hsin Lin</b><div class="text-sm text-mute">Project Manager</div></div></li>
+          <li class="flex items-center gap-4 py-3"><img src="img/vliu.jpg" alt="" class="h-14 w-14 rounded-full object-cover"><div><b>Vally Liu</b><div class="text-sm text-mute">Project Manager</div></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto mt-12 max-w-5xl px-4">
+    <h2 class="text-xl font-semibold">Related Projects</h2>
+    <ul class="mt-4 list-disc space-y-1 pl-5">
+      <li><a class="underline" href="https://www.taipei-tvet.com/">Working Group to Internationalize Technological / Vocational Education in Taiwan (Taipei TVET)</a></li>
+      <li><a class="underline" href="https://taipeiyie.com/en-home/">Asia-Pacific Youth Innovation &amp; Entrepreneurship Project (Taipei YIE)</a></li>
+      <li>EDNET Senior Staff Project</li>
+    </ul>
+  </section>
+</template>
+
+<!-- ============ Variant C: directory page with section nav ============ -->
+<template id="C" data-name="Directory with side nav">
+  <section class="bg-copper py-10 text-white">
+    <div class="mx-auto max-w-6xl px-4"><h1 class="text-4xl font-semibold">Organization</h1></div>
+  </section>
+  <div class="mx-auto grid max-w-6xl gap-10 px-4 py-12 md:grid-cols-[12rem_1fr]">
+    <nav class="text-sm md:sticky md:top-6 md:self-start">
+      <ul class="space-y-2 border-l-2 border-copper-light pl-4">
+        <li><a href="#c-structure" class="font-semibold text-copper">Structure</a></li>
+        <li><a href="#c-people">People</a></li>
+        <li><a href="#c-projects">Related Projects</a></li>
+      </ul>
+    </nav>
+    <div class="space-y-16">
+      <section id="c-structure">
+        <h2 class="text-2xl font-semibold">Structure</h2>
+        <dl class="mt-6 divide-y divide-black/10 border-y border-black/10">
+          <div class="grid grid-cols-[5rem_1fr] items-center gap-4 py-4"><dd class="logo h-12 w-20" data-svg="apec"></dd><dt>Asia-Pacific Economic Cooperation</dt></div>
+          <div class="grid grid-cols-[5rem_1fr] items-center gap-4 py-4"><dd class="logo h-12 w-12" data-svg="moe"></dd><dt>Ministry of Education</dt></div>
+          <div class="grid grid-cols-[5rem_1fr] items-center gap-4 bg-peach py-4"><dd class="logo h-12 w-16" data-svg="iied"></dd><dt class="font-semibold">Institute of Innovation &amp; Education Development</dt></div>
+          <div class="grid grid-cols-[5rem_1fr] items-center gap-4 py-4"><dd class="logo h-12 w-20" data-svg="taipeitech"></dd><dt>Taipei Tech</dt></div>
+        </dl>
+        <table class="mt-8 w-full text-left text-sm">
+          <thead><tr class="border-b-2 border-copper"><th class="py-2 pr-4">Department</th><th class="py-2">Project</th></tr></thead>
+          <tbody class="divide-y divide-black/10">
+            <tr><td class="py-3 pr-4 font-medium">Dept. of Higher Education</td><td class="py-3">Asia-Pacific Youth Innovation &amp; Entrepreneurship Project</td></tr>
+            <tr><td class="py-3 pr-4 font-medium">Dept. of Technological and Vocational Education</td><td class="py-3">Working Group to Internationalize Technological / Vocational Education in Taiwan</td></tr>
+            <tr><td class="py-3 pr-4 font-medium">Dept. of International and Cross-strait Education</td><td class="py-3">HRDWG-EDNET</td></tr>
+          </tbody>
+        </table>
+      </section>
+      <section id="c-people">
+        <h2 class="text-2xl font-semibold">People</h2>
+        <h3 class="mt-6 text-sm font-semibold uppercase tracking-wide text-copper">Leadership</h3>
+        <div class="mt-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="flex gap-4 rounded-lg border border-black/10 p-3"><img src="img/yang.jpg" alt="" class="h-20 w-20 rounded object-cover"><div><b>Yun-Hua Yang</b><div class="text-sm text-mute">Director</div></div></div>
+          <div class="flex gap-4 rounded-lg border border-black/10 p-3"><img src="img/lin.jpg" alt="" class="h-20 w-20 rounded object-cover"><div><b>Eric Yen-Liang Lin</b><div class="text-sm text-mute">Deputy Director</div></div></div>
+          <div class="flex gap-4 rounded-lg border border-black/10 p-3"><img src="img/tanangkingsing.jpg" alt="" class="h-20 w-20 rounded object-cover"><div><b>Michael Tanangkingsing</b><div class="text-sm text-mute">Deputy Director</div></div></div>
+        </div>
+        <h3 class="mt-8 text-sm font-semibold uppercase tracking-wide text-copper">Team</h3>
+        <div class="mt-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="flex gap-4 rounded-lg border border-black/10 p-3"><img src="img/tliu.jpg" alt="" class="h-20 w-20 rounded object-cover"><div><b>Tiresias Liu</b><div class="text-sm text-mute">Project Manager</div></div></div>
+          <div class="flex gap-4 rounded-lg border border-black/10 p-3"><img src="img/yen.jpg" alt="" class="h-20 w-20 rounded object-cover"><div><b>Alan Yen</b><div class="text-sm text-mute">Executive Secretary</div></div></div>
+          <div class="flex gap-4 rounded-lg border border-black/10 p-3"><img src="img/plin.jpg" alt="" class="h-20 w-20 rounded object-cover"><div><b>Pei-Hsin Lin</b><div class="text-sm text-mute">Project Manager</div></div></div>
+          <div class="flex gap-4 rounded-lg border border-black/10 p-3"><img src="img/vliu.jpg" alt="" class="h-20 w-20 rounded object-cover"><div><b>Vally Liu</b><div class="text-sm text-mute">Project Manager</div></div></div>
+        </div>
+      </section>
+      <section id="c-projects">
+        <h2 class="text-2xl font-semibold">Related Projects</h2>
+        <div class="mt-6 grid gap-4 md:grid-cols-3">
+          <a href="https://www.taipei-tvet.com/" class="block overflow-hidden rounded-lg border border-black/10 hover:border-copper"><img src="img/tvet.jpg" alt="" class="h-32 w-full object-cover"><div class="p-4 text-sm">Working Group to Internationalize Technological / Vocational Education in Taiwan (Taipei TVET) ↗</div></a>
+          <a href="https://taipeiyie.com/en-home/" class="block overflow-hidden rounded-lg border border-black/10 hover:border-copper"><img src="img/higher.jpg" alt="" class="h-32 w-full object-cover"><div class="p-4 text-sm">Asia-Pacific Youth Innovation &amp; Entrepreneurship Project (Taipei YIE) ↗</div></a>
+          <div class="overflow-hidden rounded-lg border border-black/10"><img src="img/intl.jpg" alt="" class="h-32 w-full object-cover"><div class="p-4 text-sm">EDNET Senior Staff Project</div></div>
+        </div>
+      </section>
+    </div>
+  </div>
+</template>
+
+<!-- Prototype switcher: not part of the design -->
+<div id="switcher" class="fixed bottom-4 left-1/2 z-50 flex -translate-x-1/2 items-center gap-3 rounded-full bg-black px-4 py-2 text-sm text-white shadow-2xl ring-2 ring-fuchsia-400">
+  <button id="prev" class="px-2">←</button><span id="label"></span><button id="next" class="px-2">→</button>
+</div>
+
+<script>
+  const keys = ['A', 'B', 'C'];
+  function inlineSvgs(root) {
+    for (const el of root.querySelectorAll('[data-svg]')) el.innerHTML = `<img src="img/${el.dataset.svg}.svg" alt="" class="h-full w-full object-contain">`;
+  }
+  function show(k) {
+    if (!keys.includes(k)) k = 'A';
+    const t = document.getElementById(k);
+    const root = document.getElementById('variant-root');
+    root.replaceChildren(t.content.cloneNode(true));
+    document.getElementById('label').textContent = `${k} (${t.dataset.name})`;
+    const u = new URL(location); u.searchParams.set('variant', k); history.replaceState(null, '', u);
+    inlineSvgs(root); inlineSvgs(document.querySelector('header'));
+  }
+  const cur = () => new URL(location).searchParams.get('variant') ?? 'A';
+  const step = d => show(keys[(keys.indexOf(cur()) + d + keys.length) % keys.length]);
+  document.getElementById('prev').onclick = () => step(-1);
+  document.getElementById('next').onclick = () => step(1);
+  addEventListener('keydown', e => {
+    if (e.target.closest('input,textarea,[contenteditable]')) return;
+    if (e.key === 'ArrowLeft') step(-1);
+    if (e.key === 'ArrowRight') step(1);
+  });
+  show(cur());
+</script>
+</body>
+</html>
