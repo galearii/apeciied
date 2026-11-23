@@ -3,10 +3,84 @@ layout: default
 title: "APEC HRDWG-EDNET"
 description: "The goal of APEC Human Resource Development Working Group Education Network is to foster strong and vibrant learning systems across APEC member economies ."
 permalink: /apec-hrdwg-ednet
-noindex: true
 ---
 {%- comment -%}
-  Placeholder until this page is ported: the title band only, kept out of
-  search (noindex) so the nav works in the meantime.
+  APEC HRDWG EDNET, ported from the Wix page: the title band; the member
+  map beside the APEC Secretariat panel; HRDWG and its three networks; the
+  HRDWG in Chinese Taipei chart; then EDNET's goals beside their chart.
+  Wix's yellow and cream panels are peach here (no other tokens fit).
 {%- endcomment %}
-{% include page_title.html %}
+{% include page_title.html title="APEC HRDWG EDNET" subtitle="APEC Human Resource Development Working Group Education Network" %}
+
+{% capture secretariat %}
+  <div class="grid md:grid-cols-[3fr_2fr]">
+    <div class="flex items-center bg-paper p-4 md:p-6">
+      <img src="/assets/images/ednet-apec-members-map.png" alt="Map of the 21 APEC member economies, coloured by the year each joined: 1989, 1991, 1993, 1994 or 1998." width="1489" height="1041" class="w-full" />
+    </div>
+    <div class="prose-site bg-brand-soft px-4 py-12 text-sm sm:px-6 md:px-10 md:py-16 lg:px-12">
+      <h2>APEC Secretariat</h2>
+      <p>APEC seeks to achieve its objectives through a broad work agenda based on three pillars:</p>
+      <ol>
+        <li>Trade and investment liberalization</li>
+        <li>Business facilitation</li>
+        <li>Economic and technical cooperation</li>
+      </ol>
+      <p>Established in 1993, the APEC Secretariat is based in Singapore and operates as the central support mechanism for the APEC process. It provides coordination, technical support and consultancy as well as information management, communications and public outreach services.</p>
+    </div>
+  </div>
+{% endcapture %}
+{% include strip.html content=secretariat container="none" %}
+
+{% capture hrdwg %}
+    <div class="prose-site bg-brand-soft px-4 py-10 sm:px-10 md:px-16 md:py-12">
+      <h2 class="mb-3">HRDWG</h2>
+      <p class="mb-8 tracking-widest">Human Resources Development Working Group</p>
+      <p class="mb-1">The objectives of HRDWG are:</p>
+      <ol>
+        <li>Develop 21st Century Knowledge and Skills for All</li>
+        <li>Integrate HRD into the global economy</li>
+        <li>Address the Social Dimension of Globalization</li>
+      </ol>
+      <p class="mb-0">HRDWG is composed of three units:</p>
+    </div>
+    <ul class="mx-auto mt-6 grid max-w-3xl gap-6 sm:grid-cols-3 sm:gap-5">
+      <li class="bg-paper p-4 pb-8 text-center">
+        <img src="/assets/images/ednet-cbn.jpg" alt="" width="800" height="448" loading="lazy" class="mx-auto aspect-square w-full max-w-56 rounded-full object-cover" />
+        <h3 class="mt-5 text-sm tracking-widest text-blue">Capacity Building Network (CBN)</h3>
+        <p class="mt-3 leading-relaxed">Focus on skills development, human resource management and vocational training</p>
+      </li>
+      <li class="bg-paper p-4 pb-8 text-center">
+        <img src="/assets/images/ednet-ednet.jpg" alt="" width="800" height="469" loading="lazy" class="mx-auto aspect-square w-full max-w-56 rounded-full object-cover" />
+        <h3 class="mt-5 text-sm tracking-widest text-blue">Education Network (EDNET)</h3>
+        <p class="mt-3 leading-relaxed">Focus on fostering strong and vibrant learning systems and promoting quality and equitable education</p>
+      </li>
+      <li class="bg-paper p-4 pb-8 text-center">
+        <img src="/assets/images/ednet-lspn.jpg" alt="" width="800" height="523" loading="lazy" class="mx-auto aspect-square w-full max-w-56 rounded-full object-cover" />
+        <h3 class="mt-5 text-sm tracking-widest text-blue">Labor and Social Protection Network (LSPN)</h3>
+        <p class="mt-3 leading-relaxed">Focus on fostering strong and flexible labor markets and strengthening social protection, including social safety nets</p>
+      </li>
+    </ul>
+{% endcapture %}
+{% include strip.html content=hrdwg tone="grey" class="py-12 md:py-16" %}
+
+{% capture taipei %}
+    <h2 class="mb-10 text-center text-3xl font-semibold tracking-tight md:text-4xl">HRDWG in Chinese Taipei</h2>
+    <img src="/assets/images/ednet-hrdwg-chart.png" alt="Chart: the Human Resources Development Working Group (HRDWG), led by the National Development Council, has three networks: the Capacity Building Network (CBN), led by the Workforce Development Agency; the Education Network (EDNET), led by the Ministry of Education; and the Labor and Social Protection Network (LSPN), led by the Ministry of Labor." width="969" height="478" loading="lazy" class="mx-auto w-full max-w-4xl" />
+{% endcapture %}
+{% include strip.html content=taipei class="py-12 md:py-16" %}
+
+{% capture goals %}
+    <div class="prose-site mx-auto max-w-3xl">
+      <h2 class="mb-4">EDNET Goals &amp; Objectives</h2>
+      <p class="mb-8 text-sm tracking-widest">To foster strong and vibrant learning systems across APEC member economies and strengthen the role of education in promoting social, individual, economic and sustainable development through cross-border education cooperation</p>
+      <div class="grid items-center gap-10 md:grid-cols-2">
+        <img src="/assets/images/ednet-goals-chart.png" alt="Chart of EDNET's three goals: enhancing competencies, increasing employability and accelerating innovation." width="539" height="539" loading="lazy" class="mx-auto w-full max-w-72 rounded-full bg-paper p-4" />
+        <ol class="mb-0">
+          <li>Developing global education cooperation with other relevant fora and institutions, multilateral organizations through collaborative research and publication, exchange programs, training and education</li>
+          <li>Providing appropriate opportunities and conducive environment for K-12 children and students in higher education to engage in happy and effective learning</li>
+          <li>Preparing today’s youth with appropriate education and training, skills, and participating in cross-border education to succeed in their local education system and compete in a globalized world</li>
+        </ol>
+      </div>
+    </div>
+{% endcapture %}
+{% include strip.html content=goals tone="grey" class="py-12 md:py-16" %}
