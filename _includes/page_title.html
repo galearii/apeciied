@@ -1,12 +1,14 @@
 {%- comment -%}
   The page-title band every page opens with, holding the page's one <h1>.
   Params:
-  - title: the heading; defaults to the page's `title`
+  - title: the heading; defaults to the page's `title`. "{year}" in it
+    becomes the Schedule's year (_data/schedule.yml)
   - subtitle: an optional line under the heading
   - image: makes it a photo band, white text over a darkened photo
   - button_url, button_label: an optional button (photo band only)
 {%- endcomment -%}
-{%- assign band_title = include.title | default: page.title -%}
+{%- assign schedule_year = site.data.schedule.year | append: "" -%}
+{%- assign band_title = include.title | default: page.title | replace: "{year}", schedule_year -%}
 {%- if include.image %}
 <section class="relative isolate overflow-hidden bg-ink">
   <img src="{{ include.image }}" alt="" fetchpriority="high" class="absolute inset-0 -z-10 size-full object-cover opacity-75" />

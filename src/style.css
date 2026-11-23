@@ -26,6 +26,7 @@
   --color-grey: #f5f5f5; /* grey strips */
   --color-blue: #2279ab;
   --color-red: #ea492e;
+  --color-purple: #7b3fa0; /* Schedule: meetings & workshops */
 }
 
 /* `js:` styles apply only once the inline script in the layout has run. */
