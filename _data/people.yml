@@ -1,0 +1,45 @@
+# The institute's people on the Organization page, in the live page's
+# order. `group` is `leadership` or `team` (see GLOSSARY.md). Portraits are
+# the Wix originals, which are 150 px square; replace them with larger
+# square JPEGs (up to 800 px) when the institute has them.
+- name: Yun-Hua Yang
+  title: Director
+  group: leadership
+  photo: /assets/images/portrait-yun-hua-yang.jpg
+  alt: Yun-Hua Yang
+
+- name: Eric Yen-Liang Lin
+  title: Deputy Director
+  group: leadership
+  photo: /assets/images/portrait-eric-yen-liang-lin.jpg
+  alt: Eric Yen-Liang Lin
+
+- name: Michael Tanangkingsing
+  title: Deputy Director
+  group: leadership
+  photo: /assets/images/portrait-michael-tanangkingsing.jpg
+  alt: Michael Tanangkingsing
+
+- name: Alan Yen
+  title: Executive Secretary
+  group: team
+  photo: /assets/images/portrait-alan-yen.jpg
+  alt: Alan Yen
+
+- name: Tiresias Liu
+  title: Project Manager
+  group: team
+  photo: /assets/images/portrait-tiresias-liu.jpg
+  alt: Tiresias Liu
+
+- name: Pei-Hsin Lin
+  title: Project Manager
+  group: team
+  photo: /assets/images/portrait-pei-hsin-lin.jpg
+  alt: Pei-Hsin Lin
+
+- name: Vally Liu
+  title: Project Manager
+  group: team
+  photo: /assets/images/portrait-vally-liu.jpg
+  alt: Vally Liu
