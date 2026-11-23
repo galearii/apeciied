@@ -3,7 +3,8 @@
 
   What each tag uses, in order of preference:
   - title:       "<page.title> | <site.title>"; the site title alone on the
-                 home page or a page without a title
+                 home page or a page without a title. "{year}" in a title
+                 becomes the Schedule's year (_data/schedule.yml)
   - description: page.description, else site.description
   - image:       page.image (set in front matter or as a _config.yml default),
                  with image_alt, image_width and image_height; without one,
@@ -11,7 +12,8 @@
   - url:         the page's address without ".html"
 {%- endcomment -%}
 {%- if page.title and page.url != "/" -%}
-  {%- assign social_title = page.title | append: " | " | append: site.title -%}
+  {%- assign schedule_year = site.data.schedule.year | append: "" -%}
+  {%- assign social_title = page.title | replace: "{year}", schedule_year | append: " | " | append: site.title -%}
 {%- else -%}
   {%- assign social_title = site.title -%}
 {%- endif -%}

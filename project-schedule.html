@@ -1,12 +1,56 @@
 ---
 layout: default
-title: "Project Schedule"
+title: "{year} Project Schedule"
 description: "Project schedule of APEC IIED and its affiliated organizations"
 permalink: /project-schedule
-noindex: true
 ---
 {%- comment -%}
-  Placeholder until this page is ported: the title band only, kept out of
-  search (noindex) so the nav works in the meantime.
-{%- endcomment %}
+  The Schedule (_data/schedule.yml) as twelve month cards in reading order,
+  over the faded calendar photo, with a legend of the Schedule categories.
+  "{year}" in the title becomes the Schedule's year. assets/js/schedule.js
+  marks the current month, but only in the Schedule's own year.
+{%- endcomment -%}
+{%- assign schedule = site.data.schedule -%}
+{%- assign month_names = "January,February,March,April,May,June,July,August,September,October,November,December" | split: "," -%}
 {% include page_title.html %}
+{% capture schedule_grid %}
+  <div class="relative isolate">
+    <img src="/assets/images/schedule-calendar.jpg" alt="" loading="lazy" class="absolute inset-0 -z-10 size-full object-cover opacity-15" />
+    <div class="container-site py-12 md:py-16">
+      <ul class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
+      {%- for category in schedule.categories %}
+        <li class="flex items-center gap-2"><span class="size-2.5 shrink-0 rounded-full bg-current {{ category.colour }}" aria-hidden="true"></span>{{ category.label }}</li>
+      {%- endfor %}
+      </ul>
+      <ol class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" data-schedule-year="{{ schedule.year }}">
+      {%- for month_name in month_names %}
+        {%- assign month_entries = schedule.entries | where: "month", forloop.index %}
+        <li data-month="{{ forloop.index }}" class="rounded-lg bg-paper p-5 shadow-sm aria-[current=date]:outline-2 aria-[current=date]:outline-brand{% if month_entries.size == 0 %} opacity-60 aria-[current=date]:opacity-100{% endif %}">
+          <h2 class="flex flex-wrap items-baseline justify-between gap-2 text-lg font-semibold">{{ month_name }}</h2>
+        {%- if month_entries.size > 0 %}
+          <ul class="mt-3 space-y-2 text-sm">
+          {%- for entry in month_entries %}
+            {%- assign category = schedule.categories | where: "key", entry.category | first -%}
+            {%- capture entry_text -%}
+              {{ entry.text }}{% if entry.day %} ({{ month_name }} {{ entry.day }}{% if entry.day_end %}–{{ entry.day_end }}{% endif %}){% endif %}
+            {%- endcapture %}
+            <li class="flex gap-2 {{ category.colour }}"><span class="mt-[0.45em] size-2 shrink-0 rounded-full bg-current" aria-hidden="true"></span>
+              {%- if entry.link -%}
+                <a href="{{ entry.link }}" class="underline underline-offset-2 hover:no-underline">{{ entry_text }}</a>
+              {%- else -%}
+                <span>{{ entry_text }}</span>
+              {%- endif -%}
+            </li>
+          {%- endfor %}
+          </ul>
+        {%- else %}
+          <p class="mt-3 text-sm text-muted">Nothing scheduled</p>
+        {%- endif %}
+        </li>
+      {%- endfor %}
+      </ol>
+    </div>
+  </div>
+{% endcapture %}
+{% include strip.html tone="grey" container="none" content=schedule_grid %}
+<script src="/assets/js/schedule.js" defer></script>

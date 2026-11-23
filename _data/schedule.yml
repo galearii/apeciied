@@ -1,4 +1,75 @@
 # The Schedule: the year's plan on the Project Schedule page. Its `year`
-# also names the page in the header ("{year} Project Schedule"). The
-# Schedule categories and Schedule entries arrive with that page's port.
+# names the page ("{year} Project Schedule" in its title, heading and the
+# header's nav label) and decides when the "This month" highlight shows.
 year: 2026
+
+# Schedule categories, in legend order. `colour` is the Tailwind text class
+# of a colour token, written out in full so Tailwind finds it here; the
+# entry's dot takes the same colour.
+categories:
+  - key: moe
+    label: MOE projects
+    colour: text-ink
+  - key: apec
+    label: APEC projects
+    colour: text-brand-deep
+  - key: deadline
+    label: Submission deadlines
+    colour: text-blue
+  - key: meeting
+    label: Meetings & workshops
+    colour: text-purple
+  - key: holiday
+    label: Holidays
+    colour: text-red
+
+# Schedule entries, in month order. `day` (and `day_end` for a span) is
+# written back into the text: "Session 1 (March 5)", "(July 1–2)". A month
+# with no entries reads "Nothing scheduled".
+entries:
+  - month: 1
+    text: MOE Projects Implementation for 2026
+    category: moe
+  - month: 1
+    text: MOE Projects Finalization for 2025
+    category: moe
+  - month: 2
+    text: APEC Projects Development for 2026
+    category: apec
+  - month: 2
+    text: Lunar New Year
+    category: holiday
+  - month: 3
+    text: "Concept Note Submission: Session 1"
+    day: 5
+    category: deadline
+  - month: 6
+    text: "Concept Note Submission: Session 2"
+    day: 16
+    category: deadline
+  - month: 6
+    text: "Project Proposal Submission: Session 1"
+    day: 25
+    category: deadline
+  - month: 7
+    text: APEC Youth Engagement Workshop
+    day: 1
+    day_end: 2
+    category: meeting
+  - month: 8
+    text: APEC SOM2 EDNET Meeting Preparation
+    category: meeting
+  - month: 9
+    text: APEC SOM2 EDNET Meeting (Nanjing, China)
+    category: meeting
+  - month: 10
+    text: "Project Proposal Submission: Session 2"
+    day: 1
+    category: deadline
+    link: https://taipeiyie.com/en-home/
+  - month: 12
+    text: APEC Projects Finalization for 2026
+    category: apec
+  - month: 12
+    text: MOE Projects Proposal for 2027
+    category: moe
