@@ -1,0 +1,9 @@
+---
+layout: null
+sitemap: false
+---
+{%- comment -%} Points crawlers at the sitemap, built from site.url in _config.yml. {%- endcomment -%}
+User-agent: *
+Allow: /
+
+Sitemap: {{ "/sitemap.xml" | absolute_url }}

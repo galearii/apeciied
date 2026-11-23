@@ -1,0 +1,42 @@
+# Dependabot version updates, monthly, kept to a few PRs (UPGRADING.md):
+# one grouped PR per ecosystem for minor and patch updates, and a PR of its
+# own for each major. Security updates arrive as soon as they're published,
+# outside this schedule. Dependabot can't bump .ruby-version or .nvmrc;
+# those follow the yearly runtime bump in UPGRADING.md.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: monthly
+    groups:
+      # Listed first, so it wins: @tailwindcss/cli pins tailwindcss to its
+      # exact version, so the two must always move together, majors included.
+      tailwind:
+        patterns:
+          - "tailwindcss"
+          - "@tailwindcss/*"
+      npm-minor-and-patch:
+        update-types:
+          - minor
+          - patch
+
+  - package-ecosystem: bundler
+    directory: "/"
+    schedule:
+      interval: monthly
+    groups:
+      bundler-minor-and-patch:
+        update-types:
+          - minor
+          - patch
+
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: monthly
+    groups:
+      github-actions-minor-and-patch:
+        update-types:
+          - minor
+          - patch

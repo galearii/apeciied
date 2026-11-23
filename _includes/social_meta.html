@@ -1,0 +1,46 @@
+{%- comment -%}
+  Search and social-preview tags, included in the <head> of every page.
+
+  What each tag uses, in order of preference:
+  - title:       "<page.title> | <site.title>"; the site title alone on the
+                 home page or a page without a title
+  - description: page.description, else site.description
+  - image:       page.image (set in front matter or as a _config.yml default),
+                 with image_alt, image_width and image_height; without one,
+                 no image tags are written and the card is a plain summary
+  - url:         the page's address without ".html"
+{%- endcomment -%}
+{%- if page.title and page.url != "/" -%}
+  {%- assign social_title = page.title | append: " | " | append: site.title -%}
+{%- else -%}
+  {%- assign social_title = site.title -%}
+{%- endif -%}
+{%- assign social_description = page.description | default: site.description | strip_html | normalize_whitespace -%}
+{%- assign social_url = page.url | remove: ".html" | absolute_url %}
+    <title>{{ social_title | escape }}</title>
+    <meta name="description" content="{{ social_description | escape }}" />
+    <link rel="canonical" href="{{ social_url }}" />
+{%- if page.noindex %}
+    <meta name="robots" content="noindex" />
+{%- endif %}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="{{ site.title | escape }}" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="{{ social_title | escape }}" />
+    <meta property="og:description" content="{{ social_description | escape }}" />
+    <meta property="og:url" content="{{ social_url }}" />
+    <meta name="twitter:title" content="{{ social_title | escape }}" />
+    <meta name="twitter:description" content="{{ social_description | escape }}" />
+{%- if page.image %}
+  {%- assign social_image_alt = page.image_alt | default: social_title %}
+    <meta property="og:image" content="{{ page.image | absolute_url }}" />
+    <meta property="og:image:width" content="{{ page.image_width | default: 1200 }}" />
+    <meta property="og:image:height" content="{{ page.image_height | default: 630 }}" />
+    <meta property="og:image:alt" content="{{ social_image_alt | escape }}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="{{ page.image | absolute_url }}" />
+    <meta name="twitter:image:alt" content="{{ social_image_alt | escape }}" />
+{%- else %}
+    <meta name="twitter:card" content="summary" />
+{%- endif %}

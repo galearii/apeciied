@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "apeciied-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 4000,
+      "env": { "ASDF_NODEJS_LEGACY_FILE_DYNAMIC_STRATEGY": "latest_installed" }
+    }
+  ]
+}

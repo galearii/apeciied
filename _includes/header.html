@@ -1,0 +1,22 @@
+{%- comment -%}
+  Site header: the site title, then the links in _data/navigation.yml.
+  The link to the current page gets aria-current="page" (with or without a
+  trailing slash on either side). On narrow screens
+  the links wrap under the title; there is no menu button.
+{%- endcomment -%}
+{%- assign current_url = page.url | remove: ".html" %}
+{%- assign current_url_slash = current_url | append: "/" %}
+    <header class="border-b border-brand-soft">
+      <div class="mx-auto flex max-w-3xl flex-wrap items-baseline justify-between gap-x-6 gap-y-2 px-4 py-4 sm:px-6">
+        <a href="/" class="text-lg font-semibold text-brand hover:underline">{{ site.title }}</a>
+        <nav aria-label="Main">
+          <ul class="flex flex-wrap gap-x-5 gap-y-1">
+{%- for item in site.data.navigation %}
+  {%- assign item_url_slash = item.url | append: "/" %}
+  {%- if item.url == current_url or item.url == current_url_slash or item_url_slash == current_url %}{% assign is_current = true %}{% else %}{% assign is_current = false %}{% endif %}
+            <li><a href="{{ item.url }}" class="hover:text-brand hover:underline aria-[current=page]:font-semibold aria-[current=page]:text-brand"{% if is_current %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+{%- endfor %}
+          </ul>
+        </nav>
+      </div>
+    </header>

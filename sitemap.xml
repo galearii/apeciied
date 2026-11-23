@@ -1,0 +1,24 @@
+---
+layout: null
+sitemap: false
+---
+{%- comment -%}
+  Lists every page and PDF for search engines, using the same extensionless
+  URLs as the canonical tags in _includes/social_meta.html. Pages with
+  `noindex: true` or `sitemap: false` in their front matter are left out, as
+  are PDFs given `sitemap: false` in _config.yml defaults. robots.txt points
+  here.
+{%- endcomment -%}
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- assign pages = site.html_pages | sort: "url" %}
+{%- for page in pages %}
+  {%- if page.noindex or page.sitemap == false %}{% continue %}{% endif %}
+  <url><loc>{{ page.url | remove: ".html" | absolute_url | xml_escape }}</loc></url>
+{%- endfor %}
+{%- assign pdfs = site.static_files | where: "extname", ".pdf" %}
+{%- for file in pdfs %}
+  {%- if file.sitemap == false %}{% continue %}{% endif %}
+  <url><loc>{{ file.path | absolute_url | xml_escape }}</loc></url>
+{%- endfor %}
+</urlset>

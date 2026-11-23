@@ -1,0 +1,29 @@
+# Site settings. A new Site replaces the self-naming defaults below with
+# its own title, description and address (Start a Site, in the README).
+title: APEC IIED
+description: APEC IIED aims to build and strengthen regional education partnerships, with a focus on digital human resources.
+url: https://apeciied.netlify.app
+
+# Google Analytics 4 measurement id (e.g. G-XXXXXXXXXX). The tag renders only
+# when this is set and the build runs with JEKYLL_ENV=production, which
+# netlify.toml sets for production deploys.
+google_analytics_id:
+
+# Repo plumbing that is not part of the site. Dotfiles and dot-folders
+# (.github, .claude, .nvmrc, .ruby-version) are left out by Jekyll already.
+exclude:
+  - scripts
+  - src
+  - docs
+  - node_modules
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - netlify.toml
+  - README.md
+  - AGENTS.md
+  - CLAUDE.md
+  - UPGRADING.md
+  - GLOSSARY.md

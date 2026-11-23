@@ -1,0 +1,10 @@
+# Netlify build settings. The build image (Ubuntu Noble 24.04) is chosen in
+# the Netlify UI; Ruby and Node versions come from .ruby-version and .nvmrc.
+[build]
+  command = "npm run build"
+  publish = "_site/"
+
+# Production deploys only: deploy previews build without it, so they never
+# load analytics (_includes/analytics.html).
+[context.production.environment]
+  JEKYLL_ENV = "production"
