@@ -1,0 +1,21 @@
+{%- comment -%}
+  The one page layout: head (share tags, stylesheet, analytics), header,
+  the page in a readable column, footer.
+{%- endcomment -%}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+{% include social_meta.html %}
+    <link rel="stylesheet" href="/assets/css/style.css" />
+{% include analytics.html %}
+  </head>
+  <body class="flex min-h-screen flex-col bg-paper text-ink">
+{% include header.html %}
+    <main class="mx-auto w-full max-w-3xl flex-1 px-4 py-10 sm:px-6">
+{{ content }}
+    </main>
+{% include footer.html %}
+  </body>
+</html>

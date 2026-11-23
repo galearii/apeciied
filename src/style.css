@@ -1,0 +1,23 @@
+/*
+  Stylesheet entry point. Built by the Tailwind CLI into assets/css/style.css
+  (the build:css / dev:css scripts in package.json).
+*/
+@import "tailwindcss";
+
+/* Scan only the Jekyll sources, never the built _site/ output. */
+@source not "../_site";
+
+/*
+  Brand colours. A Site sets these four roles; the layout uses them as
+  bg-paper, text-ink, text-brand, bg-brand-soft and so on, so changing the
+  values here re-colours the whole site. Add more tokens as a Site needs them.
+*/
+@theme {
+  --color-brand: #404040; /* links, header accents */
+  --color-brand-soft: #f5f5f5; /* tinted backgrounds */
+  --color-ink: #171717; /* body text */
+  --color-paper: #ffffff; /* page background */
+}
+
+/* The Site's own styles. */
+@import "./css/site.css";
