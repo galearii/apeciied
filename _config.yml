@@ -19,6 +19,11 @@ defaults:
       image_width: 1200
       image_height: 630
 
+# Netlify's redirects (the old Wix PDF paths). Jekyll skips _-prefixed files
+# unless they are listed here.
+include:
+  - _redirects
+
 # Repo plumbing that is not part of the site. Dotfiles and dot-folders
 # (.github, .claude, .nvmrc, .ruby-version) are left out by Jekyll already.
 exclude:
