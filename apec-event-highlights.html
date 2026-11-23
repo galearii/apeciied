@@ -3,10 +3,36 @@ layout: default
 title: "APEC Event Highlights"
 description: "Highlight of events that APEC IIED has hosted"
 permalink: /apec-event-highlights
-noindex: true
 ---
 {%- comment -%}
-  Placeholder until this page is ported: the title band only, kept out of
-  search (noindex) so the nav works in the meantime.
+  APEC Event Highlights, ported from the Wix page: the photo title band,
+  then one block per year from _data/event_highlights.yml, each ending in a
+  rule. A block opens with "{year} Events" and the year's captions as a
+  list beside its first video; the other videos follow two to a row.
 {%- endcomment %}
-{% include page_title.html %}
+{% include page_title.html photo="/assets/images/event-highlights-hero-2024-forum.jpg" %}
+
+{% assign years = site.data.event_highlights | group_by: "year" %}
+{% capture highlights %}
+  {%- for year in years %}
+    <div class="border-b border-ink py-10 first:pt-0 md:px-6">
+      <div class="grid items-center gap-8 md:grid-cols-[2fr_3fr]">
+        <div>
+          <h2 class="text-3xl font-semibold tracking-tight md:text-4xl">{{ year.name }} Events</h2>
+          <ul class="mt-4 list-disc pl-5 text-sm">
+          {%- for video in year.items %}
+            <li>{{ video.caption | escape }}</li>
+          {%- endfor %}
+          </ul>
+        </div>
+        {% include youtube.html video=year.items.first %}
+      </div>
+      <div class="mt-8 grid gap-8 sm:grid-cols-2">
+      {%- for video in year.items offset: 1 %}
+        {% include youtube.html video=video %}
+      {%- endfor %}
+      </div>
+    </div>
+  {%- endfor %}
+{% endcapture %}
+{% include strip.html content=highlights tone="grey" class="py-12 md:py-16" %}

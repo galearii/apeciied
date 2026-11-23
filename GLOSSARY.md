@@ -26,6 +26,10 @@ _Avoid_: Type, tag, colour
 
 ### Events
 
+**APEC event**:
+An event the institute hosted under APEC, such as a forum, workshop or training, listed with its dates, funding and co-sponsoring economies.
+_Avoid_: Project (a Project is something else), activity
+
 **Event highlight**:
 A recorded video of an APEC event the institute hosted.
 _Avoid_: Video, highlight reel, recap

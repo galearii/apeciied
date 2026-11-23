@@ -1,0 +1,40 @@
+# The Event highlights: one YouTube video per APEC event, in the APEC Event
+# Highlights page's order. The page groups them by `year`, newest first, and
+# lists each year's captions as bullets. `title` is the video's YouTube
+# title, used for the player's title; `caption` is the line under it.
+- id: swCFyod4kpo
+  year: 2024
+  title: "2024 APEC Forum on Women and Youth Empowerment Recap Video"
+  caption: "2024 APEC Forum on Women and Youth Empowerment"
+- id: aAb5l96D40g
+  year: 2024
+  title: "2024 APEC TVET Workshop Taipei"
+  caption: "2024 TVET Workshop"
+- id: mF8MYLPqlGI
+  year: 2024
+  title: "2024 APEC Youth Capacity-Building Training & Model APEC"
+  caption: "2024 APEC Youth Capacity-Building Training & Model APEC"
+- id: pcip6ewBA2c
+  year: 2023
+  title: "2023 APEC Youth Impact Forum Recap Video"
+  caption: "2023 APEC Youth Impact Forum"
+- id: 6g38ra761LA
+  year: 2023
+  title: "【Opening Remarks】2023 TVET APEC  Workshop"
+  caption: "2023 APEC TVET Workshop"
+- id: Qxyy9v9Ftt4
+  year: 2023
+  title: "2023 APEC Youth Capacity-Building Training & Model APEC"
+  caption: "2023 APEC Youth Capacity-Building Training & Model APEC"
+- id: cF8fnA-XhKY
+  year: 2022
+  title: "2022 APEC YIE Forum Recap Video Day 1 & 2"
+  caption: "2022 APEC YIE Forum"
+- id: Bths6_K3OxQ
+  year: 2022
+  title: "2022 APEC SOM2 HRDWG EDNET Meeting in Bangkok, Thailand"
+  caption: "2022@Thailand: APEC Second Senior Officials’ Meeting, SOM2"
+- id: 4zUrCBdoAyA
+  year: 2022
+  title: "2022 APEC 青年培訓課程花絮"
+  caption: "2022 APEC Youth Capacity-Building Training"

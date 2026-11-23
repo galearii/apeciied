@@ -1,0 +1,13 @@
+{%- comment -%}
+  One Event highlight: a YouTube video in a 16:9 box, with a caption.
+  Nothing plays until the visitor presses play: the URL never asks for
+  autoplay, and `allow` leaves out the autoplay permission.
+  Params:
+  - video: an entry of _data/event_highlights.yml (id, title, caption)
+{%- endcomment -%}
+<figure>
+  <div class="aspect-video bg-ink">
+    <iframe src="https://www.youtube-nocookie.com/embed/{{ include.video.id }}" title="{{ include.video.title | escape }}" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="size-full"></iframe>
+  </div>
+  <figcaption class="mt-3 text-center text-sm">{{ include.video.caption | escape }}</figcaption>
+</figure>
