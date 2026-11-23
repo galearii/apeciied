@@ -1,0 +1,155 @@
+<!doctype html>
+<!--
+  PROTOTYPE, throw away. Wayfinder ticket: "How should the 2026 Project
+  Schedule present the month-by-month plan?" (galearii/apeciied issue 6).
+  Three structurally different schedule pages, switchable via ?variant=A|B|C
+  (or the bar at the bottom, or the left/right arrow keys). Entry text is the
+  Wix page's text. The categories are an inference from the Wix page's text
+  colours (blue = submission deadlines, red = holiday, purple = meetings and
+  workshops, black = MOE and APEC project milestones) and are named here for
+  the first time. "Today" is taken from the browser clock. Open the file in a browser.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PROTOTYPE · 2026 Project Schedule | APEC IIED</title>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.11"></script>
+<style type="text/tailwindcss">
+  @theme {
+    --color-copper: #B46A2C; --color-copper-dark: #78471D; --color-copper-mid: #DA9B66;
+    --color-copper-light: #ECCDB2; --color-peach: #FAE8DB; --color-ink: #1E1E1E;
+    --color-mute: #696666; --color-paper: #F5F5F5;
+    --color-cat-moe: #1E1E1E; --color-cat-apec: #78471D; --color-cat-deadline: #2279AB;
+    --color-cat-event: #7B3FA0; --color-cat-holiday: #EA492E;
+  }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans TC", sans-serif; }
+</style>
+</head>
+<body class="bg-white text-ink antialiased">
+<header class="border-b border-black/5 bg-paper">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+    <a href="#" class="flex items-center gap-3"><img src="img/iied.svg" alt="" class="h-10 w-14"><span class="text-xs font-semibold leading-tight">Institute of Innovation &amp;<br>Education Development</span></a>
+    <nav class="hidden gap-5 text-sm text-mute md:flex"><a>Home</a><a>About</a><a>Organization</a><a>APEC HRDWG EDNET</a><a>Newsletters</a><a class="text-copper">APEC Project ▾</a><a>Contact</a></nav>
+  </div>
+</header>
+<main id="root"></main>
+<footer class="mt-16 bg-ink py-8 text-center text-xs text-white/70">Follow us on Instagram · 2026 © APEC Institute of Innovation &amp; Education Development</footer>
+
+<div class="fixed bottom-4 left-1/2 z-50 flex -translate-x-1/2 items-center gap-3 rounded-full bg-black px-4 py-2 text-sm text-white shadow-2xl ring-2 ring-fuchsia-400">
+  <button id="prev" class="px-2">←</button><span id="label"></span><button id="next" class="px-2">→</button>
+</div>
+
+<script>
+// What would live in _data/: one year, a list of entries. Months with no entries are simply absent.
+const year = 2026;
+const categories = {
+  moe:      { label: 'MOE projects',          cls: 'text-cat-moe',      dot: 'bg-cat-moe' },
+  apec:     { label: 'APEC projects',         cls: 'text-cat-apec',     dot: 'bg-cat-apec' },
+  deadline: { label: 'Submission deadlines',  cls: 'text-cat-deadline', dot: 'bg-cat-deadline' },
+  event:    { label: 'Meetings & workshops',  cls: 'text-cat-event',    dot: 'bg-cat-event' },
+  holiday:  { label: 'Holidays',              cls: 'text-cat-holiday',  dot: 'bg-cat-holiday' },
+};
+const entries = [
+  { month: 1,  cat: 'moe',      text: 'MOE Projects Implementation for 2026' },
+  { month: 1,  cat: 'moe',      text: 'MOE Projects Finalization for 2025' },
+  { month: 2,  cat: 'apec',     text: 'APEC Projects Development for 2026' },
+  { month: 2,  cat: 'holiday',  text: 'Lunar New Year' },
+  { month: 3,  cat: 'deadline', text: 'Concept Note Submission: Session 1', day: 5 },
+  { month: 6,  cat: 'deadline', text: 'Concept Note Submission: Session 2', day: 16 },
+  { month: 6,  cat: 'deadline', text: 'Project Proposal Submission: Session 1', day: 25 },
+  { month: 7,  cat: 'event',    text: 'APEC Youth Engagement Workshop', day: 1, dayEnd: 2 },
+  { month: 8,  cat: 'event',    text: 'APEC SOM2 EDNET Meeting Preparation' },
+  { month: 9,  cat: 'event',    text: 'APEC SOM2 EDNET Meeting (Nanjing, China)' },
+  { month: 10, cat: 'deadline', text: 'Project Proposal Submission: Session 2', day: 1, link: 'https://taipeiyie.com/en-home/' },
+  { month: 12, cat: 'apec',     text: 'APEC Projects Finalization for 2026' },
+  { month: 12, cat: 'moe',      text: 'MOE Projects Proposal for 2027' },
+];
+const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const now = new Date(); const curMonth = now.getFullYear() === year ? now.getMonth() + 1 : 0;
+const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+const when = e => e.day ? `${MONTHS[e.month-1].slice(0,3)} ${e.day}${e.dayEnd ? '–' + e.dayEnd : ''}` : '';
+// Wix wrote dates inside the text, e.g. "(March 5)"; here the date is data and the text is shown with it.
+const fullText = e => e.day ? `${e.text} (${MONTHS[e.month-1]} ${e.day}${e.dayEnd ? '–' + e.dayEnd : ''})` : e.text;
+const linked = (e, inner) => e.link ? `<a href="${e.link}" class="underline underline-offset-2">${inner}</a>` : inner;
+const legend = () => `<ul class="flex flex-wrap gap-x-5 gap-y-2 text-sm">${Object.values(categories).map(c => `<li class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full ${c.dot}"></span>${c.label}</li>`).join('')}</ul>`;
+const byMonth = m => entries.filter(e => e.month === m);
+
+const variants = {
+  // A: Wix's 12-month grid, in reading order (row by row), with the colours explained by a legend.
+  A: { name: 'Month grid + legend', render: () => `
+    <section class="bg-cover bg-center py-14" style="background-image:linear-gradient(rgba(245,245,245,.88),rgba(245,245,245,.88)),url(img/calendar-bg.jpg)">
+      <div class="mx-auto max-w-6xl px-4">
+        <h1 class="text-center text-4xl font-semibold">${year} Project Schedule</h1>
+        <div class="mt-8 flex justify-center">${legend()}</div>
+        <div class="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          ${MONTHS.map((name, i) => { const es = byMonth(i+1); return `
+          <div class="rounded-lg bg-white p-5 shadow-sm ${i+1 === curMonth ? 'ring-2 ring-copper' : ''} ${es.length ? '' : 'opacity-60'}">
+            <h2 class="flex items-baseline justify-between font-semibold">${name}${i+1 === curMonth ? '<span class="text-xs font-normal text-copper">This month</span>' : ''}</h2>
+            ${es.length ? `<ul class="mt-3 space-y-2 text-sm">${es.map(e => `<li class="flex gap-2 ${categories[e.cat].cls}"><span class="mt-1.5 h-2 w-2 shrink-0 rounded-full ${categories[e.cat].dot}"></span><span>${linked(e, esc(fullText(e)))}</span></li>`).join('')}</ul>`
+                        : '<p class="mt-3 text-sm text-mute">Nothing scheduled</p>'}
+          </div>`; }).join('')}
+        </div>
+      </div>
+    </section>` },
+
+  // B: a vertical timeline. Empty months shrink to a tick; past months fade; today is marked.
+  B: { name: 'Timeline with today marker', render: () => `
+    <section class="bg-paper py-12 text-center"><h1 class="text-4xl font-semibold">${year} Project Schedule</h1></section>
+    <section class="mx-auto max-w-3xl px-4 py-12">
+      <ol class="relative border-l-2 border-copper-light pl-8">
+        ${MONTHS.map((name, i) => { const m = i+1, es = byMonth(m), past = curMonth && m < curMonth, cur = m === curMonth;
+          if (!es.length) return `<li class="relative ${cur ? 'pb-8' : 'pb-4'} ${past ? 'opacity-40' : ''}">
+              <span class="absolute -left-[2.45rem] top-1 h-3 w-3 rounded-full border-2 border-copper-light bg-white"></span>
+              <span class="text-sm text-mute">${name}</span>${cur ? '<span class="ml-3 rounded-full bg-copper px-2 py-0.5 text-xs text-white">Today</span>' : ''}</li>`;
+          return `<li class="relative pb-8 ${past ? 'opacity-40' : ''}">
+              <span class="absolute -left-[2.6rem] top-0.5 h-4 w-4 rounded-full ${cur ? 'bg-copper ring-4 ring-copper-light' : 'bg-copper-mid'}"></span>
+              <h2 class="text-lg font-semibold">${name}${cur ? '<span class="ml-3 rounded-full bg-copper px-2 py-0.5 align-middle text-xs font-normal text-white">Today</span>' : ''}</h2>
+              <ul class="mt-2 space-y-2">${es.map(e => `<li class="flex items-start gap-3">
+                ${e.day ? `<span class="w-20 shrink-0 rounded bg-peach px-2 py-0.5 text-center text-xs font-semibold text-copper-dark">${when(e)}</span>` : '<span class="w-20 shrink-0"></span>'}
+                <span class="${categories[e.cat].cls}">${linked(e, esc(e.text))}</span></li>`).join('')}</ul>
+            </li>`; }).join('')}
+      </ol>
+      <div class="mt-6">${legend()}</div>
+    </section>` },
+
+  // C: the year at a glance: categories as rows (swimlanes), months as columns. Mobile falls back to a list.
+  C: { name: 'Year-at-a-glance swimlanes', render: () => `
+    <section class="bg-paper py-12 text-center"><h1 class="text-4xl font-semibold">${year} Project Schedule</h1></section>
+    <section class="mx-auto max-w-6xl px-4 py-12">
+      <div class="hidden overflow-hidden rounded-lg border border-black/10 md:block">
+        <div class="grid grid-cols-[10rem_repeat(12,1fr)] bg-ink text-xs text-white">
+          <div class="p-2"></div>${MONTHS.map((n, i) => `<div class="p-2 text-center ${i+1 === curMonth ? 'bg-copper' : ''}">${n.slice(0,3)}</div>`).join('')}
+        </div>
+        ${Object.entries(categories).map(([k, c]) => `
+        <div class="grid grid-cols-[10rem_repeat(12,1fr)] border-t border-black/10 text-xs">
+          <div class="flex items-center gap-2 p-2 font-semibold"><span class="h-2.5 w-2.5 rounded-full ${c.dot}"></span>${c.label}</div>
+          ${MONTHS.map((_, i) => { const es = entries.filter(e => e.cat === k && e.month === i+1); return `<div class="min-h-14 border-l border-black/5 p-1 ${i+1 === curMonth ? 'bg-peach/60' : ''}">${es.map(e => `<div class="mb-1 rounded bg-paper p-1 leading-tight ${c.cls}" title="${esc(fullText(e))}">${e.day ? `<b>${e.day}${e.dayEnd ? '–' + e.dayEnd : ''}</b> ` : ''}${linked(e, esc(e.text))}</div>`).join('')}</div>`; }).join('')}
+        </div>`).join('')}
+      </div>
+      <div class="space-y-6 md:hidden">
+        ${Object.entries(categories).map(([k, c]) => `<div><h2 class="flex items-center gap-2 font-semibold"><span class="h-2.5 w-2.5 rounded-full ${c.dot}"></span>${c.label}</h2>
+          <ul class="mt-2 space-y-1 text-sm">${entries.filter(e => e.cat === k).map(e => `<li><span class="text-mute">${MONTHS[e.month-1].slice(0,3)}${e.day ? ' ' + e.day : ''}</span> · ${linked(e, esc(e.text))}</li>`).join('')}</ul></div>`).join('')}
+      </div>
+    </section>` },
+};
+
+const keys = Object.keys(variants);
+const cur = () => new URL(location).searchParams.get('variant') ?? 'A';
+function show(k) {
+  if (!keys.includes(k)) k = 'A';
+  document.getElementById('root').innerHTML = variants[k].render();
+  document.getElementById('label').textContent = `${k} (${variants[k].name})`;
+  const u = new URL(location); u.searchParams.set('variant', k); history.replaceState(null, '', u);
+}
+const step = d => show(keys[(keys.indexOf(cur()) + d + keys.length) % keys.length]);
+document.getElementById('prev').onclick = () => step(-1);
+document.getElementById('next').onclick = () => step(1);
+addEventListener('keydown', e => {
+  if (e.target.closest('input,textarea,[contenteditable]')) return;
+  if (e.key === 'ArrowLeft') step(-1); if (e.key === 'ArrowRight') step(1);
+});
+show(cur());
+</script>
+</body>
+</html>
