@@ -1,0 +1,7 @@
+﻿"Type","Host","Value","Priority","Weight","Port","TTL"
+"A","apeciied.org","185.230.63.107","","","","3600"
+"A","apeciied.org","185.230.63.186","","","","3600"
+"A","apeciied.org","185.230.63.171","","","","3600"
+"NS","apeciied.org","ns15.wixdns.net","","","","86400"
+"NS","apeciied.org","ns14.wixdns.net","","","","86400"
+"CNAME","www.apeciied.org","cdn3.wixdns.net","","","","3600"

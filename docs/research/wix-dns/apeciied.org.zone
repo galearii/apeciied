@@ -1,0 +1,12 @@
+; Zone file for apeciied.org
+; Exported from Wix DNS on 2026-11-23
+;
+$ORIGIN apeciied.org.
+$TTL 3600
+
+@                                3600     IN   A        185.230.63.107
+@                                3600     IN   A        185.230.63.186
+@                                3600     IN   A        185.230.63.171
+@                                86400    IN   NS       ns15.wixdns.net.
+@                                86400    IN   NS       ns14.wixdns.net.
+www                              3600     IN   CNAME    cdn3.wixdns.net.
