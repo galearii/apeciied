@@ -4,6 +4,8 @@
   - content: the strip's HTML, captured first with a capture block
   - tone: "white" (default), "grey", "peach" or "photo"
   - image: for a photo strip, the background photo (decorative, so alt="")
+  - fade: true fades a photo strip's photo into pale grey, for dark text
+    over it (as on Contact)
   - class: classes for the inner container, replacing the default padding
   - container: "none" to leave out the centred container, for strips that
     lay out edge to edge themselves
@@ -11,12 +13,17 @@
 {%- case include.tone -%}
   {%- when "grey" -%}{%- assign strip_classes = "bg-grey" -%}
   {%- when "peach" -%}{%- assign strip_classes = "bg-brand-soft" -%}
-  {%- when "photo" -%}{%- assign strip_classes = "relative isolate overflow-hidden bg-ink" -%}
+  {%- when "photo" -%}
+    {%- if include.fade -%}
+      {%- assign strip_classes = "relative isolate overflow-hidden bg-grey" -%}
+    {%- else -%}
+      {%- assign strip_classes = "relative isolate overflow-hidden bg-ink" -%}
+    {%- endif -%}
   {%- else -%}{%- assign strip_classes = "bg-paper" -%}
 {%- endcase %}
 <section class="{{ strip_classes }}">
 {%- if include.image %}
-  <img src="{{ include.image }}" alt="" loading="lazy" class="absolute inset-0 -z-10 size-full object-cover" />
+  <img src="{{ include.image }}" alt="" loading="lazy" class="absolute inset-0 -z-10 size-full object-cover{% if include.fade %} opacity-25{% endif %}" />
 {%- endif %}
 {%- if include.container == "none" %}
 {{ include.content }}

@@ -3,10 +3,33 @@ layout: default
 title: "Contact"
 description: "For more information, please contact us!"
 permalink: /contact
-noindex: true
 ---
 {%- comment -%}
-  Placeholder until this page is ported: the title band only, kept out of
-  search (noindex) so the nav works in the meantime.
+  Contact, ported from the Wix page: the title band, the contact details
+  over a faded photo, then a keyless Google Maps embed of the address.
+  The map query spells the street as Google does ("Zhongxiao"): with the
+  page's "Chung-Hsiao" spelling, or the university's name, Google drops
+  the pin elsewhere (or on NTUST, "Taiwan Tech").
 {%- endcomment %}
-{% include page_title.html %}
+{%- assign map_query = "1, Sec. 3, Zhongxiao E. Rd, Taipei 10608" -%}
+{% include page_title.html title="Contact Us" %}
+
+{% capture details %}
+    <div class="text-sm leading-relaxed md:pl-40">
+      <p class="font-medium">Ms. Peihsin Lin 林佩欣</p>
+      <p>Project Manager</p>
+      <p><b class="font-medium">T:</b> 02-2771-2171 #3912</p>
+      <p><b class="font-medium">E:</b> <a href="mailto:apec_iied@ntut.edu.tw?subject=About%20APEC%20IIED" class="underline underline-offset-2 hover:text-brand-hover">apec_iied@ntut.edu.tw</a></p>
+      <p class="mt-6 font-medium">Office</p>
+      <p>National Taipei University of Technology (Taipei Tech)</p>
+      <p>General Studies Building, Room 512</p>
+      <p>1, Sec.3, Chung-Hsiao E. Rd, Taipei 10608</p>
+      <p class="mt-6 flex items-center gap-3">
+        <a href="https://www.instagram.com/apec_iied/" aria-label="Instagram" class="inline-flex rounded-full bg-ink p-2 text-paper hover:bg-brand-hover">{% include icon_instagram.html class="size-5" %}</a>
+        <span>Follow us on <a href="https://www.instagram.com/apec_iied/" class="underline underline-offset-2 hover:text-brand-hover">Instagram</a>.</span>
+      </p>
+    </div>
+{% endcapture %}
+{% include strip.html content=details tone="photo" fade=true image="/assets/images/contact-desk.jpg" class="py-12 md:py-14" %}
+
+<iframe src="https://maps.google.com/maps?q={{ map_query | url_encode }}&amp;output=embed" title="Map of Taipei Tech, National Taipei University of Technology" loading="lazy" class="block h-80 w-full border-0"></iframe>
