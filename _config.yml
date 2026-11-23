@@ -2,7 +2,7 @@
 # its own title, description and address (Start a Site, in the README).
 title: APEC IIED
 description: APEC IIED aims to build and strengthen regional education partnerships, with a focus on digital human resources.
-url: https://apeciied.netlify.app
+url: https://www.apeciied.org
 
 # Google Analytics 4 measurement id (e.g. G-XXXXXXXXXX). The tag renders only
 # when this is set and the build runs with JEKYLL_ENV=production, which
