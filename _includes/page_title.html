@@ -6,10 +6,23 @@
   - subtitle: an optional line under the heading
   - image: makes it a photo band, white text over a darkened photo
   - button_url, button_label: an optional button (photo band only)
+  - photo: instead of image, a wide photo above the band, with the heading
+    on a card that overlaps the photo's lower edge (APEC Events, APEC Event
+    Highlights). The photo is decorative, so alt="". The band is grey, like
+    the strips that follow it.
 {%- endcomment -%}
 {%- assign schedule_year = site.data.schedule.year | append: "" -%}
 {%- assign band_title = include.title | default: page.title | replace: "{year}", schedule_year -%}
-{%- if include.image %}
+{%- if include.photo %}
+<section class="bg-grey">
+  <img src="{{ include.photo }}" alt="" fetchpriority="high" class="h-48 w-full object-cover sm:h-72 md:h-[28rem]" />
+  <div class="container-site">
+    <div class="relative -mt-10 border-b border-ink bg-paper px-4 pt-5 pb-4 sm:-mt-12 sm:px-6 md:-mt-16">
+      <h1 class="text-3xl font-semibold tracking-tight md:text-5xl">{{ band_title }}</h1>
+    </div>
+  </div>
+</section>
+{%- elsif include.image %}
 <section class="relative isolate overflow-hidden bg-ink">
   <img src="{{ include.image }}" alt="" fetchpriority="high" class="absolute inset-0 -z-10 size-full object-cover opacity-75" />
   <div class="container-site py-24 md:py-40">
