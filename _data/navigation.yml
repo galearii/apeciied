@@ -1,3 +1,24 @@
 # The header's links, in order. `url` is the page's address without ".html".
+# An item with `children` is a group: a button that opens their list (the
+# APEC Project dropdown). `{year}` in a title becomes the Schedule's year
+# from _data/schedule.yml.
 - title: Home
   url: /
+- title: About
+  url: /about
+- title: Organization
+  url: /organization
+- title: APEC HRDWG EDNET
+  url: /apec-hrdwg-ednet
+- title: Newsletters
+  url: /newsletters
+- title: APEC Project
+  children:
+    - title: "{year} Project Schedule"
+      url: /project-schedule
+    - title: APEC Events
+      url: /apec-events
+    - title: APEC Event Highlights
+      url: /apec-event-highlights
+- title: Contact
+  url: /contact

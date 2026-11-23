@@ -37,15 +37,24 @@ The port is being planned as a wayfinder map in this repo's issues (label
 
 - One layout, `_layouts/default.html`, with `_includes/` for the header,
   footer, share tags (`social_meta.html`) and analytics.
+- A page is a stack of full-width strips (`strip.html`: white, grey, peach
+  or photo) that opens with the page-title band (`page_title.html`, which
+  holds the page's `<h1>`). Buttons are `button.html`. Text inside a strip
+  sits in `.container-site`, running text in `.prose-site`.
 - A page's front matter drives its share tags: `title`, `description`,
   `image` (+ `image_alt`, `image_width`, `image_height`), `noindex: true`.
+  `_config.yml` `defaults` gives every page the share card as its `image`.
   `sitemap: false` keeps a page out of `sitemap.xml`.
-- Header links come from `_data/navigation.yml`.
+- Header links come from `_data/navigation.yml`; an item with `children` is
+  a dropdown. `assets/js/nav.js` opens the dropdown and the phone menu;
+  without JavaScript the nav is the full list, so keep it that way.
 - URLs are extensionless: Netlify serves `about.html` at `/about`, so links,
   navigation, canonical tags and the sitemap all use `/about`.
-- Colours are four `@theme` roles in `src/style.css` (`brand`, `brand-soft`,
-  `ink`, `paper`). Style with their classes (`text-brand`, `bg-paper`, ...)
-  so changing the four values re-colours the site.
+- Colours are `@theme` tokens in `src/style.css`: the four roles (`brand`,
+  `brand-soft`, `ink`, `paper`) plus copper shades, neutrals, blue and red.
+  Style with their classes (`text-brand`, `bg-grey`, ...), never raw hex.
+- Images are resized once from the Wix snapshot and committed under
+  `assets/images/`; nothing processes images at build time.
 - GA4 loads only on production deploys with `google_analytics_id` set; local
   builds and deploy previews never load it.
 

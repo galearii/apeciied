@@ -1,6 +1,10 @@
-{%- comment -%} Site footer: copyright year of the build and the site title. {%- endcomment %}
-    <footer class="border-t border-brand-soft">
-      <div class="mx-auto max-w-3xl px-4 py-6 text-sm sm:px-6">
-        <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
+{%- comment -%}
+  Site footer: the years from 2022 to the build year, the institute's name,
+  and the Instagram link.
+{%- endcomment %}
+    <footer class="bg-muted text-paper">
+      <div class="container-site flex flex-wrap items-center justify-between gap-x-8 gap-y-4 py-8 text-sm">
+        <p>2022–{{ site.time | date: "%Y" }} © APEC Institute of Innovation &amp; Education Development</p>
+        <a href="https://www.instagram.com/apec_iied/" class="inline-flex items-center gap-2 underline-offset-2 hover:underline">{% include icon_instagram.html %}Instagram</a>
       </div>
     </footer>

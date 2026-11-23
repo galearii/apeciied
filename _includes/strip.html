@@ -1,0 +1,28 @@
+{%- comment -%}
+  A full-width section strip; pages are built from a stack of these.
+  Params:
+  - content: the strip's HTML, captured first with a capture block
+  - tone: "white" (default), "grey", "peach" or "photo"
+  - image: for a photo strip, the background photo (decorative, so alt="")
+  - class: classes for the inner container, replacing the default padding
+  - container: "none" to leave out the centred container, for strips that
+    lay out edge to edge themselves
+{%- endcomment -%}
+{%- case include.tone -%}
+  {%- when "grey" -%}{%- assign strip_classes = "bg-grey" -%}
+  {%- when "peach" -%}{%- assign strip_classes = "bg-brand-soft" -%}
+  {%- when "photo" -%}{%- assign strip_classes = "relative isolate overflow-hidden bg-ink" -%}
+  {%- else -%}{%- assign strip_classes = "bg-paper" -%}
+{%- endcase %}
+<section class="{{ strip_classes }}">
+{%- if include.image %}
+  <img src="{{ include.image }}" alt="" loading="lazy" class="absolute inset-0 -z-10 size-full object-cover" />
+{%- endif %}
+{%- if include.container == "none" %}
+{{ include.content }}
+{%- else %}
+  <div class="container-site {{ include.class | default: 'py-16 md:py-24' }}">
+{{ include.content }}
+  </div>
+{%- endif %}
+</section>

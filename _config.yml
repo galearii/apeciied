@@ -9,6 +9,16 @@ url: https://apeciied.netlify.app
 # netlify.toml sets for production deploys.
 google_analytics_id:
 
+# Every page's share card unless its front matter sets its own `image`.
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/share-card.jpg
+      image_alt: The APEC IIED logo among open books
+      image_width: 1200
+      image_height: 630
+
 # Repo plumbing that is not part of the site. Dotfiles and dot-folders
 # (.github, .claude, .nvmrc, .ruby-version) are left out by Jekyll already.
 exclude:

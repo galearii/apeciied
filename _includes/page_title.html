@@ -1,0 +1,32 @@
+{%- comment -%}
+  The page-title band every page opens with, holding the page's one <h1>.
+  Params:
+  - title: the heading; defaults to the page's `title`
+  - subtitle: an optional line under the heading
+  - image: makes it a photo band, white text over a darkened photo
+  - button_url, button_label: an optional button (photo band only)
+{%- endcomment -%}
+{%- assign band_title = include.title | default: page.title -%}
+{%- if include.image %}
+<section class="relative isolate overflow-hidden bg-ink">
+  <img src="{{ include.image }}" alt="" fetchpriority="high" class="absolute inset-0 -z-10 size-full object-cover opacity-75" />
+  <div class="container-site py-24 md:py-40">
+    <h1 class="max-w-3xl text-4xl leading-tight font-semibold tracking-tight text-paper sm:text-5xl md:text-7xl">{{ band_title }}</h1>
+  {%- if include.subtitle %}
+    <p class="mt-6 max-w-2xl text-lg text-paper">{{ include.subtitle }}</p>
+  {%- endif %}
+  {%- if include.button_url %}
+    <p class="mt-10">{% include button.html url=include.button_url label=include.button_label style="light" %}</p>
+  {%- endif %}
+  </div>
+</section>
+{%- else %}
+<section class="bg-grey">
+  <div class="container-site py-14 text-center md:py-20">
+    <h1 class="text-3xl font-semibold tracking-tight md:text-5xl">{{ band_title }}</h1>
+  {%- if include.subtitle %}
+    <p class="mt-4 text-sm text-muted">{{ include.subtitle }}</p>
+  {%- endif %}
+  </div>
+</section>
+{%- endif %}

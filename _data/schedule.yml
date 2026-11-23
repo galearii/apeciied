@@ -1,0 +1,4 @@
+# The Schedule: the year's plan on the Project Schedule page. Its `year`
+# also names the page in the header ("{year} Project Schedule"). The
+# Schedule categories and Schedule entries arrive with that page's port.
+year: 2026

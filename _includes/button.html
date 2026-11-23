@@ -1,0 +1,13 @@
+{%- comment -%}
+  A button-style link, as Wix draws its buttons.
+  Params:
+  - url, label
+  - style: "ink" (default; dark, as on Home), "light" (white, on photos) or
+    "brand" (copper)
+{%- endcomment -%}
+{%- case include.style -%}
+  {%- when "light" -%}{%- assign button_colours = "bg-paper text-ink hover:bg-brand-soft" -%}
+  {%- when "brand" -%}{%- assign button_colours = "bg-brand text-paper hover:bg-brand-hover" -%}
+  {%- else -%}{%- assign button_colours = "bg-ink text-grey hover:bg-brand-hover hover:text-paper" -%}
+{%- endcase -%}
+<a href="{{ include.url }}" class="inline-block px-6 py-3 text-sm no-underline transition-colors {{ button_colours }}">{{ include.label }}</a>

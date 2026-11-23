@@ -1,19 +1,25 @@
 {%- comment -%}
-  The one page layout: head (share tags, stylesheet, analytics), header,
-  the page in a readable column, footer.
+  The one page layout: head (share tags, icons, stylesheet, nav script,
+  analytics), header, the page, footer. A page is a stack of full-width
+  strips (_includes/strip.html) that opens with the page-title band
+  (_includes/page_title.html).
 {%- endcomment -%}
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>document.documentElement.classList.add("js");</script>
 {% include social_meta.html %}
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon.png" />
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png" />
     <link rel="stylesheet" href="/assets/css/style.css" />
+    <script src="/assets/js/nav.js" defer></script>
 {% include analytics.html %}
   </head>
-  <body class="flex min-h-screen flex-col bg-paper text-ink">
+  <body class="flex min-h-screen flex-col">
 {% include header.html %}
-    <main class="mx-auto w-full max-w-3xl flex-1 px-4 py-10 sm:px-6">
+    <main class="flex-1">
 {{ content }}
     </main>
 {% include footer.html %}
