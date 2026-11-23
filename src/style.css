@@ -8,16 +8,28 @@
 @source not "../_site";
 
 /*
-  Brand colours. A Site sets these four roles; the layout uses them as
-  bg-paper, text-ink, text-brand, bg-brand-soft and so on, so changing the
-  values here re-colours the whole site. Add more tokens as a Site needs them.
+  Colours, all from the live site's copper palette. Templates and CSS use
+  these only (text-brand, bg-grey, border-brand-line, ...), never raw hex.
+  The first four are the template's roles; the rest are named by role.
 */
 @theme {
-  --color-brand: #404040; /* links, header accents */
-  --color-brand-soft: #f5f5f5; /* tinted backgrounds */
-  --color-ink: #171717; /* body text */
-  --color-paper: #ffffff; /* page background */
+  --color-brand: #b46a2c; /* copper: links, current page, accents */
+  --color-brand-soft: #fae8db; /* peach strips and tints */
+  --color-ink: #1e1e1e; /* body text, solid buttons */
+  --color-paper: #ffffff; /* page background, white strips */
+
+  --color-brand-hover: #a26028; /* copper links and buttons on hover */
+  --color-brand-light: #da9b66; /* light copper accents */
+  --color-brand-line: #eccdb2; /* copper rules and borders */
+  --color-brand-deep: #78471d; /* dark copper */
+  --color-muted: #696666; /* secondary text, footer background */
+  --color-grey: #f5f5f5; /* grey strips */
+  --color-blue: #2279ab;
+  --color-red: #ea492e;
 }
+
+/* `js:` styles apply only once the inline script in the layout has run. */
+@custom-variant js (&:where(.js, .js *));
 
 /* The Site's own styles. */
 @import "./css/site.css";

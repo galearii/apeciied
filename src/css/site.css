@@ -1,15 +1,48 @@
 /*
-  The Site's own styles, imported last by src/style.css. Starts with plain,
-  readable defaults for page content (Tailwind's reset removes the
-  browser's), using the @theme colour roles. Edit or replace freely.
+  The Site's own styles, imported last by src/style.css. Colours come from
+  the @theme tokens only. Most styling is Tailwind classes in the templates;
+  this file holds the base type, the shared text container and prose styles,
+  and the nav's open/closed rules, which depend on the `js` class and on
+  aria-expanded.
 */
 @layer base {
-  main h1 { @apply mb-6 text-3xl font-bold tracking-tight; }
-  main h2 { @apply mt-10 mb-4 text-2xl font-semibold; }
-  main h3 { @apply mt-8 mb-3 text-xl font-semibold; }
-  main p, main ul, main ol { @apply mb-4 leading-relaxed; }
-  main ul { @apply list-disc pl-6; }
-  main ol { @apply list-decimal pl-6; }
-  main a { @apply text-brand underline hover:no-underline; }
-  main code { @apply rounded bg-brand-soft px-1 text-[0.9em]; }
+  body { @apply bg-paper font-sans text-ink antialiased; }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-brand; }
+}
+
+@layer components {
+  /* The centred text container inside every strip. */
+  .container-site { @apply mx-auto w-full max-w-5xl px-4 sm:px-6; }
+
+  /* Running text: headings, paragraphs, lists and links inside a strip. */
+  .prose-site h2 { @apply mb-6 text-3xl font-semibold tracking-tight md:text-4xl; }
+  .prose-site h3 { @apply mt-8 mb-3 text-xl font-semibold; }
+  .prose-site p,
+  .prose-site ul,
+  .prose-site ol { @apply mb-4 leading-relaxed; }
+  .prose-site ul { @apply list-disc pl-6; }
+  .prose-site ol { @apply list-decimal pl-6; }
+  .prose-site li { @apply mb-1; }
+  .prose-site a { @apply text-brand underline underline-offset-2 hover:text-brand-hover; }
+}
+
+/*
+  Header nav. Without JavaScript the nav is the full list: on phones every
+  link shows, and on desktop the APEC Project list opens on hover or when
+  keyboard focus is inside it. With JavaScript (the `js` class), the phone
+  menu opens from the menu button, and the desktop list follows the
+  button's aria-expanded.
+*/
+@media (width < 48rem) {
+  .js .site-nav:not(.is-open) { display: none; }
+}
+
+@media (width >= 48rem) {
+  .nav-sub { display: none; }
+
+  html:not(.js) .nav-group:hover .nav-sub,
+  html:not(.js) .nav-group:focus-within .nav-sub,
+  .js .nav-group-toggle[aria-expanded="true"] + .nav-sub { display: block; }
+
+  .nav-group-toggle[aria-expanded="true"] .nav-chevron { @apply rotate-180; }
 }

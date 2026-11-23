@@ -1,6 +1,57 @@
 ---
 layout: default
+title: APEC IIED
+description: APEC IIED aims to build and strengthen regional education partnerships, with a focus on digital human resources.
 ---
-<h1>{{ site.title }}</h1>
+{%- comment -%}
+  Home, ported from the Wix page: the photo title band, the organization
+  strip, the HRDWG-EDNET strip, then Newsletters, Contact Us and Follow on a
+  panel over a photo.
+{%- endcomment %}
+{% include page_title.html title="Strengthening Education Cooperation within APEC" image="/assets/images/home-hero-library.jpg" button_url="/about" button_label="Learn More..." %}
 
-<p>{{ site.description }}</p>
+{% capture organization %}
+  <div class="grid md:grid-cols-2">
+    <img src="/assets/images/home-organization-laptops.jpg" alt="" width="2000" height="1333" loading="lazy" class="aspect-[3/2] w-full object-cover md:aspect-auto md:h-full" />
+    <div class="prose-site px-4 py-12 sm:px-6 md:px-10 md:py-20 lg:px-14">
+      <h2>Structured and Extensive</h2>
+      <p class="text-muted">Our working groups works on an extensive range of topics, including regional industry-academica collaborations, digital innovation, youth entrepreneurship, and more!</p>
+      <p class="mt-8">{% include button.html url="/organization" label="More About Our Organization" %}</p>
+    </div>
+  </div>
+{% endcapture %}
+{% include strip.html content=organization container="none" %}
+
+{% capture hrdwg %}
+    <div class="prose-site mx-auto max-w-2xl">
+      <h2 class="text-center">APEC HRDWG-EDNET?</h2>
+      <p>The APEC Human Resource Development Working Group Education Network (APEC HRDWG-EDNET) has three main objectives:</p>
+      <ol>
+        <li>Develop 21st Century Knowledge and Skills for All</li>
+        <li>Integrate HRD into the global economy</li>
+        <li>Address the Social Dimension of Globalization</li>
+      </ol>
+      <p>Learn more about how the working group is organized to achieve results.</p>
+      <p class="mt-8 text-center">{% include button.html url="/apec-hrdwg-ednet" label="More About HRDWG-EDNET" %}</p>
+    </div>
+{% endcapture %}
+{% include strip.html content=hrdwg tone="grey" %}
+
+{% capture links %}
+    <div class="prose-site grid gap-10 bg-paper px-6 py-10 text-center md:grid-cols-3 md:gap-6 md:px-10">
+      <div>
+        <h2 class="mb-4 text-base md:text-base">Newsletters</h2>
+        <p>Find news of APEC IIED through our <a href="/newsletters">newsletters</a>.</p>
+      </div>
+      <div>
+        <h2 class="mb-4 text-base md:text-base">Contact Us</h2>
+        <p>Fore more information, please <a href="/contact">contact us</a>.</p>
+      </div>
+      <div>
+        <h2 class="mb-4 text-base md:text-base">Follow</h2>
+        <p>Follow us on <a href="https://www.instagram.com/apec_iied/">Instagram</a>.</p>
+        <a href="https://www.instagram.com/apec_iied/" aria-label="Instagram" class="inline-flex rounded-full bg-ink p-1.5 text-paper no-underline hover:bg-brand-hover hover:text-paper">{% include icon_instagram.html class="size-4" %}</a>
+      </div>
+    </div>
+{% endcapture %}
+{% include strip.html content=links tone="photo" image="/assets/images/home-contact-pen.jpg" class="py-12 md:py-14" %}
