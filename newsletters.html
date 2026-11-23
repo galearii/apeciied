@@ -3,10 +3,47 @@ layout: default
 title: "Newsletters"
 description: "Latest news of events of APEC and APEC IIED"
 permalink: /newsletters
-noindex: true
 ---
 {%- comment -%}
-  Placeholder until this page is ported: the title band only, kept out of
-  search (noindex) so the nav works in the meantime.
+  Newsletters, redesigned (spec: Newsletters). The Newsletter issues come
+  from _data/newsletter_issues.yml, sorted here newest first: the highest
+  number is featured in a peach block, the rest follow one row each under
+  "Earlier issues". Adding an issue is one data entry.
 {%- endcomment %}
-{% include page_title.html %}
+{% include page_title.html title="Newsletter" %}
+{%- assign issues = site.data.newsletter_issues | sort: "number" | reverse %}
+{%- assign latest = issues | first %}
+
+{% capture newsletters %}
+    <div class="grid items-center gap-8 bg-brand-soft p-6 sm:p-8 md:grid-cols-[16rem_1fr] md:gap-10">
+      <img src="{{ latest.cover }}" alt="Cover of Newsletter {{ latest.number }}" width="565" height="800" class="mx-auto w-full max-w-64 shadow-lg" />
+      <div>
+        <p class="text-sm font-semibold tracking-wide text-brand uppercase">Latest issue</p>
+        <h2 class="mt-1 text-3xl font-semibold tracking-tight">Newsletter {{ latest.number }}</h2>
+        <ul class="mt-4 list-disc space-y-1 pl-5 leading-relaxed">
+        {%- for topic in latest.topics %}
+          <li>{{ topic }}</li>
+        {%- endfor %}
+        </ul>
+        {%- capture latest_label %}Download (PDF, {{ latest.size_mb }} MB){% endcapture %}
+        <p class="mt-8">{% include button.html url=latest.pdf label=latest_label style="brand" %}</p>
+      </div>
+    </div>
+
+    <h2 class="mt-16 text-2xl font-semibold tracking-tight">Earlier issues</h2>
+    <ol class="mt-4 divide-y divide-brand-line border-y border-brand-line">
+    {%- for issue in issues offset: 1 %}
+      <li class="grid grid-cols-[4rem_1fr] gap-x-4 gap-y-1 py-5 md:grid-cols-[4rem_9rem_1fr_auto] md:items-center md:gap-x-6">
+        <img src="{{ issue.cover }}" alt="Cover of Newsletter {{ issue.number }}" width="565" height="800" loading="lazy" class="row-span-3 w-16 border border-brand-line md:row-span-1" />
+        <h3 id="newsletter-{{ issue.number }}" class="font-semibold">Newsletter {{ issue.number }}</h3>
+        <ul class="space-y-1 text-sm text-muted">
+        {%- for topic in issue.topics %}
+          <li>{{ topic }}</li>
+        {%- endfor %}
+        </ul>
+        <a href="{{ issue.pdf }}" aria-describedby="newsletter-{{ issue.number }}" class="text-sm text-brand underline underline-offset-2 hover:text-brand-hover md:whitespace-nowrap">Download (PDF, {{ issue.size_mb }} MB)</a>
+      </li>
+    {%- endfor %}
+    </ol>
+{% endcapture %}
+{% include strip.html content=newsletters %}

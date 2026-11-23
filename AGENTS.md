@@ -53,6 +53,8 @@ The port is being planned as a wayfinder map in this repo's issues (label
 - Colours are `@theme` tokens in `src/style.css`: the four roles (`brand`,
   `brand-soft`, `ink`, `paper`) plus copper shades, neutrals, blue and red.
   Style with their classes (`text-brand`, `bg-grey`, ...), never raw hex.
+- `_redirects` (Netlify) 301s the old Wix PDF paths to `/assets/newsletters/`;
+  `_config.yml` `include` publishes it.
 - Images are resized once from the Wix snapshot and committed under
   `assets/images/`; nothing processes images at build time.
 - GA4 loads only on production deploys with `google_analytics_id` set; local
