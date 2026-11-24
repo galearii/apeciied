@@ -9,7 +9,7 @@
   - photo: instead of image, a wide photo above the band, with the heading
     on a card that overlaps the photo's lower edge (APEC Events, APEC Event
     Highlights). The photo is decorative, so alt="". The band is grey, like
-    the strips that follow it.
+    the strips that follow it. A subtitle sits on the card under the heading.
 {%- endcomment -%}
 {%- assign schedule_year = site.data.schedule.year | append: "" -%}
 {%- assign band_title = include.title | default: page.title | replace: "{year}", schedule_year -%}
@@ -19,6 +19,9 @@
   <div class="container-site">
     <div class="relative -mt-10 border-b border-ink bg-paper px-4 pt-5 pb-4 sm:-mt-12 sm:px-6 md:-mt-16">
       <h1 class="text-3xl font-semibold tracking-tight md:text-5xl">{{ band_title }}</h1>
+    {%- if include.subtitle %}
+      <p class="mt-3 text-sm text-muted">{{ include.subtitle }}</p>
+    {%- endif %}
     </div>
   </div>
 </section>

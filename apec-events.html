@@ -7,14 +7,15 @@ permalink: /apec-events
 {%- comment -%}
   APEC Events, ported from the Wix page: the photo title band, then the
   APEC events from _data/events.yml in their order, divided by rules, each
-  with its banner or logo to the right on wider screens.
+  with its banner or logo to the right on wider screens. Each event's id is
+  its slugified title, which About links to.
 {%- endcomment %}
 {% include page_title.html photo="/assets/images/events-hero-2024-tvet-workshop.jpg" %}
 
 {% capture events %}
     <div class="divide-y divide-ink">
     {%- for event in site.data.events %}
-      <article class="flow-root py-10 first:pt-0 last:pb-0 md:px-8">
+      <article id="{{ event.title | slugify }}" class="flow-root py-10 first:pt-0 last:pb-0 md:px-8">
         <img src="{{ event.image }}" alt="{{ event.alt | escape }}" width="{{ event.width }}" height="{{ event.height }}" loading="lazy" class="mb-6 max-h-48 max-w-full object-contain object-left md:float-right md:mb-4 md:ml-10 md:max-w-72 md:object-right" />
         <h2 class="leading-snug font-semibold">{{ event.title | escape }}</h2>
         <p class="mt-6 text-sm text-muted">{{ event.date | escape }}{% if event.funding %} ({{ event.funding | escape }}){% endif %}
