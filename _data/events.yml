@@ -2,6 +2,26 @@
 # Events page lists them. `date` and `funding` render as "date (funding)".
 # `text` is HTML: plain text plus links. `image` is the event's banner or
 # logo, with its `alt` text and pixel `width` and `height`.
+- title: "APEC Forum on Women and Youth Empowerment: Enhancing Digital Competitiveness and Inclusive Economic Growth through Innovative Enterprise Education"
+  date: "November 5-7, 2025"
+  funding: "APEC Sub-fund: Women and the Economy"
+  cosponsors: "Chile; Korea; Malaysia; New Zealand; Philippines; United States"
+  text: >-
+    To promote education collaboration and talent development across the Asia-Pacific region, the Ministry of Education (MOE) is hosting the 2025 APEC Forum on Women and Youth Empowerment: Enhancing Digital Competitiveness and Inclusive Economic Growth through Innovative Enterprise Education. This forum invited around 70 participants, including representatives from 19 APEC member economies and youth delegates from Taiwan, to engage in diverse exchanges. This forum focuses on education and innovation issues for women and youth in the digital era, aiming to cultivate inclusive and creative talent by fostering cross-economy collaborations, in line with APEC's sustainable development goals.
+  image: "/assets/images/events-2025-forum-women-youth-empowerment.jpg"
+  alt: "APEC Forum on Women and Youth Empowerment: Enhancing Digital Competitiveness and Inclusive Economic Growth through Innovative Enterprise Education banner"
+  width: 800
+  height: 450
+- title: "Leveraging Digitalization for Talent Inclusion and Empowerment: Facilitating Economic Transitions by Academia-Industry Partnership"
+  date: "August 27-28, 2025"
+  funding: "APEC Sub-fund: Digital Innovation"
+  cosponsors: "Chile; Japan; Korea; Malaysia; New Zealand; Philippines; Thailand"
+  text: >-
+    This year's workshop aligns with APEC 2025's priority of "Innovate - Promoting Digital Innovation in the Asia-Pacific Region". It will focus on Leveraging Digitalization for Talent Inclusion and Empowerment: Facilitating Economic Transitions by Academia-Industry Partnership, examining how digital transformation can be harnessed to cultivate a future-ready workforce. Participants - including policymakers, educators, industry leaders, and experts - will exchange insights and successful strategies on inclusive digital transformation, sustainable collaboration, and cross-regional talent development. The program also features case studies, focus group discussions, and a site visit to Lunghwa University of Science and Technology to showcase practical models of collaboration in action.
+  image: "/assets/images/events-2025-tvet-workshop.jpg"
+  alt: "TVET 2025 logo"
+  width: 800
+  height: 271
 - title: "2025 APEC Youth Engagement Workshop: Connectivity, Partnership, and Opportunities"
   date: "July 3-4, 2025"
   text: >-
